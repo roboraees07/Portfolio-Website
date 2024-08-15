@@ -1,0 +1,78 @@
+{
+    "name": "Global Radiation Prediction using Neural Network Time Series Tool",
+    "abstract": "Solar radiation information plays an important role in solar energy research. The solar radiation needs to be predicted correctly. Due to the economic revolution that happened in the latest years, worldwide warming has come to be one of the essential problems. Estimation and prediction of solar radiation the usage of diverse fashions both conventional and Artificial Neural Network (ANN) based model were advanced for this motive. The foremost objective of this project is to have a look to review Artificial Neural Network (ANN) primarily based techniques so that you can pick out suitable strategies available inside the literature for solar radiation prediction and to identify studies gaps. Artificial Neural Network strategies are expecting sun radiation more as it should be in assessment to standard methods.",
+    "introduction": "Solar radiation data plays an important role in solar energy research. The integration of solar energy sources has increasingly become a major challenge for global energy consumption. Multiple models are built to approximate global solar radiation. The performance of the prediction is discussed for different neural network structures by taking into consideration the number of input elements, learning algorithms and number of hidden neurons. For training and testing the ANN solar radiation data with different climatic conditions are used. The proposed model proves that artificial neural network models present high accuracy in predicting short-term hourly global solar radiation. Artificial neural networks (ANNs) have been successfully applied to a number of time series prediction and modeling tasks.",
+    "objectives": [
+      "The main objective of this project is to optimize and improve the performance of the artificial neural network model to accurately predict global solar radiation.",
+      "To develop a computationally simpler Neural Network model to estimate global radiation with mean squared error using commonly measured weather parameters. Parameters such as Ambient Air Temperature, Relative humidity, Barometric pressure, Wind speed, wind direction, Rain_unit_Totaliz used as inputs and global radiation as output. In this project a multilayer feed forward, neural network based on the Levenberg-Marquard (LM) back propagation learning algorithm was developed, trained and tested using solar parameters with varying climatic conditions."
+    ],
+    "literatureWork": [
+      {
+        "title": "The nonlinear autoregressive network with exogenous inputs (NARX)",
+        "description": "It is a recurrent dynamic network, with feedback connections enclosing several layers of the network. The NARX model is based on the linear ARX model, which is commonly used in time-series modeling. Predict series y(t) given d past values of y(t) and another series x(t). The defining equation for the NARX model is y(t)=f(y(t−1), y(t−2),…,y(t−ny),u(t−1),u(t−2),…,u(t−nu))."
+      },
+      {
+        "title": "Nonlinear Autoregressive Neural Network (NAR)",
+        "description": "NAR prediction, the future values of a time series are predicted only from past values of that series. Predict series y(t) given d past values of y(t). The defining equation for the NAR model is y(t)=f(y(t−1), ......., y(t−d))."
+      },
+      {
+        "title": "Non-Linear Input/Output",
+        "description": "Use nonlinear model identification when a linear model does not completely capture your system dynamics. Predict series y(t) given d past values of series x(t). The defining equation for the NAR model is y(t)=f(x(t−1), .........x(t−d))."
+      },
+      {
+        "title": "Training Algorithm",
+        "description": "These three different kinds of nonlinear time series problems give us the opportunity to implement the following algorithm for our proposed problem solution. Some of most suitable are shown in the table below."
+      }
+    ],
+    "proposedMethodology": {
+      "steps": [
+        "The meteorological data that are selected for the analysis is, Ambient Air Temperature, Relative humidity, Barometric pressure, Wind speed, wind direction, Rain_unit_Totaliz and Global Radiation.",
+        "The ANN model is developed using artificial neural network time series tool (ntstool) of MATLAB 2021 software.",
+        "ntstool consists of a standard feed forward two-layered network which is trained with Lavenberg – Marquardt (LM) algorithm. Using trainlm function.",
+        "The data collected is randomly divided and 70% can be used for training, 15% for testing and 15% for validation.",
+        "Training multiple times will generate different results due to different initial conditions and sampling.",
+        "Training automatically stops when generalization stops improving, as indicated by an increase in the mean square error of the validation samples.",
+        "According to our problem and for their proposed solution the best kinds of nonlinear time series we are implementing is NARX (Discussed in Section 2.2).",
+        "Our methodology is time series prediction with the NARX network. When applied to time series prediction, the NARX network is designed as a feedforward time delay neural network (TDNN)."
+      ]
+    },
+    "simulationResults": {
+      "tables": [
+        {
+          "title": "Experiment Results Table 1",
+          "description": "Table showing regression values for various experiments",
+          "columns": ["Experiment No.", "No. of Hidden Neurons", "Number of Delays", "Training Results (%)", "Testing Result (%)"],
+          "rows": [
+            ["1", "10", "2", "98.2072", "98.6051"],
+            ["2", "20", "2", "98.3928", "98.8432"],
+            ["3", "20", "5", "98.8525", "97.8793"],
+            ["4", "10", "5", "98.637", "98.1091"],
+            ["5", "10", "10", "98.5557", "98.3466"],
+            ["6", "20", "10", "98.7632", "97.9209"]
+          ]
+        },
+        {
+          "title": "Experiment Results Table 2",
+          "description": "Table showing MSE, fitness, and epoch values",
+          "columns": ["Experiment No.", "No. of Hidden Neurons", "Number of Delays", "Training MSE", "Testing MSE", "Fitness", "Epoch"],
+          "rows": [
+            ["1", "10", "2", "1.04E+03", "1.35E+03", "OverFIT", "23"],
+            ["2", "20", "2", "1.21E+03", "9.27E+02", "UnderFIT", "10"],
+            ["3", "20", "5", "8.70E+02", "1.46E+03", "OverFIT", "10"],
+            ["4", "10", "5", "1.06E+03", "1.33E+03", "FIT", "8"],
+            ["5", "10", "10", "1.08E+03", "1.23E+03", "UnderFIT", "11"],
+            ["6", "20", "10", "9.37E+02", "1.54E+03", "OverFIT", "36"]
+          ]
+        }
+      ],
+      "designParameters": [
+        "System Description: Intel(R) Core (TM) i5-6200U CPU 2.40 GHz, Installed RAM: 8.00 GB (7.90 GB usable), System Type: 64-bit operating system, x64-based processor.",
+        "Simulation Tool: MATLAB R2021a, Neural Network Tool: nntool>nnstart>ntstool.",
+        "DataSet: 10 minutes Data set from 1st jan 2014 to 31st jan 2014 of Ambient Air Temperature, Relative humidity, Barometric pressure, Wind speed, wind direction, Rain_unit_Totaliz as inputs (i) and Global Radiation as Target Value(t).",
+        "Parameters: Randomly divides up the 4465 target timesteps as: Training: 70% (3125 Target timesteps), Validation: 15% (670 Target timesteps), Testing: 15% (670 Target timesteps)."
+      ]
+    },
+    "discussion": "For 10 minutes data set we have the following parameters: Ambient Air Temperature, Relative humidity, Barometric pressure, Wind speed, Wind direction, Rain_unit_Totaliz as input and Global Radiation as output. When we take 10 neurons and set delay to 5 then we have training regression 0.97959 and testing regression 0.98473. Mean square error for this case is training MSE is 1.06E+03 and testing MSE 1.33E+03. As number of epochs increases, the training Mean Squared Error (MSE) decreases. Number of epochs is 11. So, fitness in this case is overfit because testing error is high. The fit case is when neuron is 10 and delay is 5 then we have training regression 0.97959 and testing regression 0.98473. Mean square error for this case is training MSE is 1.06E+03 and testing MSE 1.33E+03.Epoch is 08.",
+    "conclusion": "The use of Artificial Neural Network technique in solar radiation modeling and prediction is for hourly data set. The model includes input parameters like Ambient Air Temperature, Relative humidity, Barometric pressure, Wind speed, wind direction, Rain_unit_Totaliz and output as global radiation. During the ANN simulation, hidden layer neurons has to be changed one by one and mse has to be evaluated which is time consuming. A method has to be developed to find out the suitable number of neurons in the hidden layer. Comparison of different ANN models has to be done so as to identify the best model. Using neutral time series tool, we predict global radiations."
+  }
+  

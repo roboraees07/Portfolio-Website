@@ -1,0 +1,41 @@
+{
+    "id": "project2",
+    "name": "TetraX - A Modified RLC Trainer",
+    "abstract": "Tetra-X Trainer is a device for learning, teaching, and testing Resistance, Voltage, Inductance, and Capacitance digital electronic circuits...",
+    "introduction": "The TetraX Trainer is designed to bridge the gap in practical electronics education by providing a versatile and user-friendly platform...",
+    "objectives": [
+      "Enhance Learning and Understanding: To provide a practical and interactive learning tool...",
+      "Simplify Circuit Assembly: To create a platform that allows users to easily build, modify, and test a wide range of electronic circuits...",
+      "Integrate Modern Technology: To incorporate digital technology into the learning process...",
+      "Promote Versatility and Flexibility: To design a trainer that can be used for various educational purposes...",
+      "Foster Innovation: To encourage students to experiment with different circuit configurations and components..."
+    ],
+    "methodology": [
+      {
+        "title": "Circuit Design and Simulation",
+        "description": "The first step involves the design and simulation of the RLC circuits...",
+        "steps": [
+          "Component Selection: Identifying and selecting the appropriate resistors, capacitors, inductors, diodes (DIAC), and triodes (TRIAC)...",
+          "Circuit Schematic Design: Creating detailed schematics using MATLAB software...",
+          "Simulation: Using simulation tools to model the behavior of the circuits before physical assembly..."
+        ]
+      },
+      {
+        "title": "PCB Design and Fabrication",
+        "description": "Once the circuit design and simulation are complete, the next step is to design and fabricate the PCB...",
+        "steps": [
+          "PCB Layout Design: Translating the circuit schematics into a PCB layout...",
+          "PCB Fabrication: Fabricating the PCB according to the design specifications..."
+        ]
+      }
+    ],
+    "discussion": [
+      "The trainer consists of different resistors of values 33, 22, 68, 100, and 220 ohms...",
+      "It includes an inductor and capacitor of 1 H & 1 microfarad...",
+      "The switch is used to turn electric current on and off...",
+      "Using a multimeter, various readings can be measured, and different circuits can be built on the trainer...",
+      "This trainer is compact, portable, and ideal for educational use..."
+    ],
+    "conclusion": "The TetraX Trainer is an ideal learning tool for gaining practical knowledge in circuit design and analysis..."
+  }
+  

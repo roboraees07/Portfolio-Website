@@ -1,0 +1,45 @@
+{
+    "name": "AgriTech: A Robust Artificial Intelligence Based Crop Monitoring System for Pakistani Agricultural Land",
+    "abstract": "Agricultural yield is vital for food safety around the world. It is important for agriculture-based economies like Pakistan. Plant disease can adversely influence the yield and damage the crop. Therefore, crop monitoring is essential...",
+    "introduction": "In this project, the students will broaden a system for tracking crop fitness. The system will consist of an aerial drone with RGB and NIR cameras for taking the imagery...",
+    "motivation": [
+      "An aerial drone is getting used to reveal crop health. Besides this, using their digital imaging systems, one can obtain field elevation information that then can be used to detect diseases in plants.",
+      "Drone usage based on Computer Vision techniques for product spraying can achieve higher precision than using conventional methods...",
+      "New sensors mounted on drones, with high-tech cameras being the eyes of the client on the ground and optimal procedures for the survey, data acquisition, and analysis."
+    ],
+    "problemStatement": "With the global population soaring, the agricultural sector is facing a crisis, but AI has the potential to deliver much-needed solutions...",
+    "objectives": [
+      "Health problems for the farmers who spry the infected plants.",
+      "Different plant diseases.",
+      "Increase the production of crops."
+    ],
+    "proposedMethodology": {
+      "description": "The methodology flow chart visually represents the sequence of steps and approaches followed in undertaking the project...",
+      "steps": [
+        "Development of Monitoring System: Designing a monitoring system utilizing RGB camera for plant fitness.",
+        "Image Processing and AI Implementation: Developing and deploying image processing algorithms and AI techniques for the real-time detection and symptoms of crop illnesses.",
+        "Disease Classification Model: Training an AI algorithm to classify and identify crop diseases based totally on patterns extracted from imagery.",
+        "Targeted Pesticide Spraying: After the detection of disease pesticide is sprayed on disease plant based on decision made by Artificial Intelligence algorithm..."
+      ]
+    },
+    "deployment": {
+      "description": "The Deployment could be done in the raspberrypi by loading all the trained model into it...",
+      "steps": [
+        "For the development of Unmanned Aerial Vehicle, we use APM 2.8 Flight controller which is used for open-source autopilot systems...",
+        "For easily accessible use of the farmers or any plant hobbyist to take care of their plants and get notified also controlling the Drone via mobile application we have developed the Mobile Application called “AgriTech”..."
+      ]
+    },
+    "results": "Hardware Plants diseased and Segmentation. UAV Deployment with Weight Flight. Mobile App Disease Classification.",
+    "recognitions": [
+      "Pakistan Engineering Council: The Project is fully Funded by Pakistan Engineering Council of 0.2 Million PKR",
+      "Global Google Solution Challenge 2024: Top 100 Finalist globally in the Google Solution Challenge 2024.",
+      "Google Cloud Startup Competition Pakistan 2024: A finalist in the Google Cloud Startup Competition Pakistan.",
+      "PEC Capstone Expo KP 2024: We proudly won 2nd prize at the KP Capstone Expo 2024 among 90+ Project Exhibited around the Province KPK."
+    ],
+    "videos": {
+      "appVideo": "App.mp4",
+      "plantVideo": "Plant Video.mp4",
+      "uavVideo": "UAV.mp4"
+    }
+  }
+  

@@ -1,0 +1,42 @@
+{
+    "name": "Mobile Apps Malware Classification",
+    "abstract": "The rapid proliferation of mobile applications has led to an increased risk of malware infections, posing significant threats to user privacy and data security. This paper presents a comprehensive approach to classify mobile applications as either benign or malicious using machine learning algorithms...",
+    "introduction": "With the growing reliance on mobile applications for daily tasks, ensuring the security and privacy of user data has become crucial...",
+    "objectives": [
+      "To develop a machine learning-based framework for classifying Android applications as benign or malware.",
+      "To evaluate the performance of different machine learning algorithms in detecting mobile malware.",
+      "To identify the most effective features and parameters that contribute to accurate malware classification.",
+      "To provide insights into the strengths and limitations of each algorithm in the context of mobile security."
+    ],
+    "methodology": {
+      "steps": [
+        "Data Collection and Preprocessing: Utilization of the Drebin dataset, preprocessing of data to handle missing values, normalize features, and split the dataset into training and testing sets.",
+        "Feature Selection: Analysis of the dataset to identify key features that contribute to accurate classification.",
+        "Model Implementation: Implementation of multiple machine learning algorithms such as Decision Tree Classifier, Support Vector Machine (SVM), Logistic Regression, K-Nearest Neighbors (KNN), and Sequential Neural Network.",
+        "Model Evaluation: Evaluation of models using metrics such as accuracy, precision, recall, and F1-score. Comparison of results to determine the most effective algorithm."
+      ]
+    },
+    "simulationResults": {
+      "description": "The simulation results reveal the following accuracy scores for each algorithm...",
+      "accuracyScores": [
+        "Decision Tree Classifier: 98%",
+        "Support Vector Machine (Linear Kernel): 98%",
+        "Support Vector Machine (Polynomial Kernel): 96%",
+        "Support Vector Machine (RBF Kernel): 98%",
+        "Logistic Regression: 98%",
+        "K-Nearest Neighbors (K=9): Results comparable to Decision Trees and SVMs.",
+        "Sequential Neural Network: Achieved an accuracy of 97-98% after 10 epochs."
+      ],
+      "parameters": [
+        "Dataset: Drebin dataset with 15,036 samples.",
+        "Features: 215 features including permissions, API calls, dynamic behaviors, and intents.",
+        "Training/Test Split: 70% training, 30% testing.",
+        "Evaluation Metrics: Accuracy, precision, recall, F1-score.",
+        "Software and Tools: Python, Scikit-learn, TensorFlow."
+      ]
+    },
+    "discussion": "The results indicate that machine learning algorithms are highly effective in classifying mobile applications as either benign or malware...",
+    "conclusion": "This research demonstrates the feasibility and effectiveness of using machine learning algorithms for mobile malware detection...",
+    "githubRepo": "https://github.com/roboraees07/Classification-of-Android-Malware-Applications"
+  }
+  

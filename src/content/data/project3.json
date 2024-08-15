@@ -1,0 +1,49 @@
+{
+    "id": "project3",
+    "name": "Smart Car Robot with Line Following, Obstacle Avoidance, and Light Following Functions",
+
+    "abstract": "The development of autonomous mobile robots has gained significant traction due to their wide range of applications in industries, research, and daily life...",
+    "introduction": "The field of robotics has advanced to a point where autonomous mobile robots can be deployed in diverse environments to perform specific tasks...",
+    "objectives": [
+      "Designing and building a smart car robot capable of autonomously following a predefined path using line-following sensors.",
+      "Implementing an obstacle avoidance system that enables the robot to detect and navigate around obstacles in real-time.",
+      "Developing a light-following mechanism that allows the robot to track and move towards a light source.",
+      "Integrating these functions to create a cohesive and efficient robotic system."
+    ],
+    "literatureWork": [
+      {
+        "title": "Line Following",
+        "description": "Line following is a fundamental robotic task where the robot is programmed to follow a predefined path, usually marked by a black line on a white surface..."
+      },
+      {
+        "title": "Obstacle Avoidance",
+        "description": "Obstacle avoidance is a critical function that allows the robot to navigate around obstacles without human intervention..."
+      },
+      {
+        "title": "Light Following",
+        "description": "Light following enables the robot to detect and move towards a light source..."
+      }
+    ],
+    "methodology": {
+      "description": "The proposed methodology involves the integration of the three functions—line following, obstacle avoidance, and light following—into a single robotic platform..."
+      
+    },
+    "implementation": {
+      "hardwareSetup": [
+        "Microcontroller: Arduino or Raspberry Pi.",
+        "Motors: DC motors with motor drivers.",
+        "Sensors: IR sensors for line detection, ultrasonic sensors for obstacle detection, and LDRs for light following."
+      ],
+      "softwareAndAlgorithms": [
+        "Line Following Algorithm: The robot adjusts its steering based on the input from the IR sensors to stay on the line.",
+        "Obstacle Avoidance Algorithm: The robot stops and changes direction when an obstacle is detected within a certain distance by the ultrasonic sensors.",
+        "Light Following Algorithm: The robot moves towards the direction with the highest light intensity detected by the LDRs."
+      ],
+      "testingAndValidation": [
+        "The robot's performance is tested in various environments, including straight and curved lines, different obstacle arrangements, and varying light conditions...",
+        "The results are analyzed to evaluate the accuracy and efficiency of the integrated system."
+      ]
+    },
+    "conclusion": "The smart car robot successfully integrates line following, obstacle avoidance, and light following functions into a single platform..."
+  }
+  
