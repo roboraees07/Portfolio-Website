@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSpring, animated } from '@react-spring/web';
+import { useInView } from 'react-intersection-observer';
 
 // Import images for each experience
-import teachricaImg from '../content/Experience/EncoderBytes.png'; // Replace with the correct path to the image
+import teachricaImg from '../content/Experience/EncoderBytes.png'; 
 import cisnrImg from '../content/Experience/CISNR Lab.png';
 import mccmImg from '../content/Experience/MCCM.png';
 import gdscImg from '../content/Experience/GDSC.png';
@@ -94,37 +96,63 @@ function Experience() {
   ];
 
   return (
-    <div id='experience' className="p-8 bg-gray-900 min-h-screen">
+    <div id='experience' className="mt-32 p-8 bg-gray-900 min-h-screen">
       <h1 className="text-4xl font-bold mb-8 text-white">Professional Experience</h1>
       <div className="grid gap-6">
         {experiences.map((experience, index) => (
-          <div 
-            key={index} 
-            className="flex items-center bg-white p-4 shadow-lg rounded-lg transform transition-transform hover:scale-105 hover:shadow-2xl duration-300"
-          >
-            <img
-              src={experience.img}
-              alt={experience.company}
-              className="w-20 h-20 mr-4 object-cover rounded-full"
-            />
-            <div>
-              <h2 className="text-green-600 font-bold text-lg">
-                {experience.title},{' '}
-                <span className="text-black">{experience.company}</span>
-              </h2>
-              <p className="text-gray-500">{experience.date}</p>
-              <a
-                href={experience.link}
-                className="text-blue-600 hover:underline mt-1 inline-block"
-              >
-                Click Here
-              </a>
-            </div>
-          </div>
+          <ExperienceCard key={index} experience={experience} index={index} />
         ))}
       </div>
     </div>
   );
 }
+
+const ExperienceCard = ({ experience, index }) => {
+  const [hovered, setHovered] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: false });
+
+  // Slide-in effect when in view
+  const slideIn = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateX(0)' : 'translateX(-100%)',
+    config: { duration: 1000 },
+    delay: index * 100, // Staggered animation for each experience
+  });
+
+  // Hover effect
+  const hoverEffect = useSpring({
+    transform: hovered ? 'scale(1.05)' : 'scale(1)',
+    config: { tension: 300, friction: 10 },
+  });
+
+  return (
+    <animated.div
+      ref={ref}
+      style={{ ...slideIn, ...hoverEffect }}
+      className="flex items-center bg-white p-4 shadow-lg rounded-lg transform transition-transform duration-300"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <img
+        src={experience.img}
+        alt={experience.company}
+        className="w-20 h-20 mr-4 object-cover rounded-full"
+      />
+      <div>
+        <h2 className="text-green-600 font-bold text-lg">
+          {experience.title},{' '}
+          <span className="text-black">{experience.company}</span>
+        </h2>
+        <p className="text-gray-500">{experience.date}</p>
+        <a
+          href={experience.link}
+          className="text-blue-600 hover:underline mt-1 inline-block"
+        >
+          Click Here
+        </a>
+      </div>
+    </animated.div>
+  );
+};
 
 export default Experience;
