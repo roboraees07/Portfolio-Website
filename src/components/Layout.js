@@ -10,10 +10,10 @@ function Layout({ children }) {
         <div className="mb-16 text-center">
           <Link to="/" className="hover:text-gray-400">
             <div className="text-white">
-              <p className="text-lg">Muhammad</p>
+              <p className="text-lg font-poppins">Muhammad</p> {/* Poppins for normal text */}
               <div className="flex items-baseline justify-center">
-                <h1 className="text-6xl font-bold">Raees</h1>
-                <p className="text-2xl ml-2">Azam</p>
+                <h1 className="text-6xl font-playfair">Raees</h1> {/* Playfair Display for logo-type */}
+                <p className="text-2xl ml-2 font-poppins">Azam</p> {/* Poppins for normal text */}
               </div>
             </div>
           </Link>
@@ -37,7 +37,7 @@ function Layout({ children }) {
               wrapper="div"
               cursor={true}
               repeat={Infinity}
-              style={{ whiteSpace: 'pre-line' }}
+              style={{ whiteSpace: 'pre-line', fontFamily: 'Poppins' }} // Use Poppins for animations too
             />
           </div>
         </div>

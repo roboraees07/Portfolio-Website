@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "Why I Started Blogging?",
+      "date": "AUGUST 23, 2022",
+      "readTime": "2 MIN READ",
+      "content": "This is the content for Why I Started Blogging?"
+    },
+    {
+      "id": 2,
+      "title": "My Inspirations",
+      "date": "AUGUST 23, 2022",
+      "readTime": "3 MIN READ",
+      "content": "This is the content for My Inspirations"
+    },
+    {
+      "id": 3,
+      "title": "Which Programming Languages Should You Learn to Become A Hacker?",
+      "date": "AUGUST 23, 2022",
+      "readTime": "3 MIN READ",
+      "content": "This is the content for Which Programming Languages Should You Learn to Become A Hacker?"
+    }
+  ]
+  

@@ -2,10 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    scroll-behavior: smooth;
-    animation: all 0.6s infinite ease-in;
+* {
+  scroll-behavior: smooth;
+  transition: all 0.6s ease-in;
 }
+
 body {
-    background-color: rgb(38, 49, 58);
+  background-color: rgb(38, 49, 58);
+  font-family: 'Poppins', sans-serif; /* Default body font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif; /* Font for headings */
+}
+
+p {
+  font-family: 'Poppins', sans-serif; /* Font for paragraphs */
+}
+
+a {
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: rgb(98, 182, 239); /* Change color on hover */
+}
+
+button {
+  font-family: 'Roboto', sans-serif; /* Another font for buttons */
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(98, 182, 239); /* Change background color on hover */
+}
+
+input, textarea {
+  font-family: 'Poppins', sans-serif; /* Font for input fields and textareas */
+}
+
+/* Custom animations and transitions */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }

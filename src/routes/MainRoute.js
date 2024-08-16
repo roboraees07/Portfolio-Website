@@ -6,6 +6,7 @@ import Skills from '../components/Skills';
 import Honors from '../components/Honors';
 import Works from '../components/Works';
 import Blogs from '../components/Blogs';
+import BlogPost from '../components/BlogPost';  
 import Contact from '../components/Contact';
 import Experience from '../components/Experience';
 import Project1 from '../components/projects/Project1';
@@ -17,15 +18,17 @@ import Project6 from '../components/projects/Project6';
 import Project7 from '../components/projects/Project7';
 import Project8 from '../components/projects/Project8';
 import Project9 from '../components/projects/Project9';
-// Import other project components...
+import TopButton from '../components/TopButton';
 
 function MainRoute() {
   const location = useLocation();
   const isProjectRoute = location.pathname.startsWith('/works/project');
+  const isBlogRoute = location.pathname.startsWith('/blogs');
 
   return (
     <div>
-      {!isProjectRoute && (
+      {/* Layout for all non-project and non-blog routes */}
+      {!isProjectRoute && !isBlogRoute && (
         <Layout>
           <Routes>
             <Route path="/" element={
@@ -42,6 +45,8 @@ function MainRoute() {
           </Routes>
         </Layout>
       )}
+
+      {/* Project routes */}
       {isProjectRoute && (
         <Routes>
           <Route path="works/project1" element={<Project1 />} />
@@ -53,9 +58,19 @@ function MainRoute() {
           <Route path="works/project7" element={<Project7 />} />
           <Route path="works/project8" element={<Project8 />} />
           <Route path="works/project9" element={<Project9 />} />
-          {/* Add other project routes here */}
         </Routes>
       )}
+
+      {/* Blog routes */}
+      {isBlogRoute && (
+        <Routes>
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:id" element={<BlogPost />} />
+        </Routes>
+      )}
+
+      {/* TopButton */}
+      <TopButton />
     </div>
   );
 }
