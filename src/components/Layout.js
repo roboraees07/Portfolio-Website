@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaCog, FaAward, FaBriefcase, FaBlog, FaEnvelope } from 'react-icons/fa';
+import { FaUser, FaCog, FaAward, FaBriefcase, FaBlog, FaEnvelope, FaLaptopCode } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 
 function Layout({ children }) {
@@ -22,7 +22,7 @@ function Layout({ children }) {
               sequence={[
                 'AI Engineer',
                 2000,
-                'Robotics',
+                'Robotics Engineer',
                 2000,
                 'Data Engineer',
                 2000,
@@ -57,7 +57,11 @@ function Layout({ children }) {
             </li>
             <li className="flex flex-col items-center md:flex-row">
               <FaBriefcase className="mb-1 md:mr-2" />
-              <a href="#works" className="hover:text-gray-400 text-xs md:text-base">Works</a>
+              <a href="#projects" className="hover:text-gray-400 text-xs md:text-base">Projects</a>
+            </li>
+            <li className="flex flex-col items-center md:flex-row">
+              <FaLaptopCode className="mb-1 md:mr-2" />
+              <a href="#experience" className="hover:text-gray-400 text-xs md:text-base">Experience</a>
             </li>
             <li className="flex flex-col items-center md:flex-row">
               <FaBlog className="mb-1 md:mr-2" />

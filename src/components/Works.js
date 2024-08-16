@@ -63,7 +63,7 @@ const projects = [
 
 function Works() {
   return (
-    <div id='works' className="mt-32 p-8 bg-black text-white min-h-screen">
+    <div id='projects' className="mt-32 p-8 bg-black text-white min-h-screen">
       <h1 className="text-4xl font-bold mb-4">WORKS</h1>
       <p>Here is the list of Projects I have developed...</p>
       

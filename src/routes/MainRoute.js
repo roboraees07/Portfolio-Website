@@ -7,6 +7,7 @@ import Honors from '../components/Honors';
 import Works from '../components/Works';
 import Blogs from '../components/Blogs';
 import Contact from '../components/Contact';
+import Experience from '../components/Experience';
 import Project1 from '../components/projects/Project1';
 import Project2 from '../components/projects/Project2';
 import Project3 from '../components/projects/Project3';
@@ -33,6 +34,7 @@ function MainRoute() {
                 <Skills />
                 <Honors />
                 <Works />
+                <Experience />
                 <Blogs />
                 <Contact />
               </div>

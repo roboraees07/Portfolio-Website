@@ -23,7 +23,7 @@ function Project9() {
 
   return (
     <div className="p-4 md:p-8 bg-gray-900 text-white min-h-screen mx-auto max-w-7xl">
-      <Link to="/#works" className="text-blue-500 hover:underline block mb-4">
+      <Link to="/#projects" className="text-blue-500 hover:underline block mb-4">
         &larr; Back to Works
       </Link>
       <h1 className="text-3xl md:text-4xl font-bold mb-4">{name}</h1>
