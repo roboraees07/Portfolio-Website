@@ -54,7 +54,7 @@ function Skills() {
 
   return (
     <div id='skills' className="mt-32 flex flex-col items-center bg-gray-900 text-white p-16 min-h-screen">
-      <h2 className="text-3xl font-bold mb-8">Skills</h2>
+      <h2 className="text-3xl font-bold mb-8 uppercase">Skills</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-16">
         {skills.map((skill, index) => (
           <Skill key={index} icon={skill.icon} name={skill.name} />

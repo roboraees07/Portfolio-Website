@@ -13,6 +13,7 @@ import orbailixImg from '../content/Experience/Orbailix.png';
 import stemImg from '../content/Experience/STEM Society.png';
 import guidingSocietyImg from '../content/Experience/Guiding Society.png';
 import pifImg from '../content/Experience/Pakistan Innovation Foundation.png';
+import ncrc from '../content/Experience/CISNR Lab-1.png'
 
 function Experience() {
   const experiences = [
@@ -70,7 +71,7 @@ function Experience() {
       company: 'National Center of Robotics and Automation Peshawar',
       date: 'July 2022',
       link: 'https://www.uetpeshawar.edu.pk/aral/index.html',
-      img: stemImg,
+      img: ncrc,
     },
     {
       title: 'Robotics Teacher’s Assistant',

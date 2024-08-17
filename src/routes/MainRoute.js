@@ -19,6 +19,7 @@ import Project7 from '../components/projects/Project7';
 import Project8 from '../components/projects/Project8';
 import Project9 from '../components/projects/Project9';
 import TopButton from '../components/TopButton';
+import MyCvs from '../components/MyCvs';
 
 function MainRoute() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function MainRoute() {
                 <Works />
                 <Experience />
                 <Blogs />
+                <MyCvs/>
                 <Contact />
               </div>
             } />
