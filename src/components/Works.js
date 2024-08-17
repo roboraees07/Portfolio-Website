@@ -63,8 +63,8 @@ const projects = [
 function Works() {
   return (
     <div id='projects' className="mt-32 p-8 bg-black text-white min-h-screen">
-      <h1 className="text-4xl font-bold mb-4">WORKS</h1>
-      <p>Here is the list of Projects I have developed...</p>
+      <h1 className="text-4xl font-bold uppercase mb-4">Projects</h1>
+      <p className='mb-4'>Here is the list of Projects I have developed...</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
         {projects.map((project, index) => (

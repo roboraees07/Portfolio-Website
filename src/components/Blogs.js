@@ -7,7 +7,7 @@ import blogs from '../content/data/blogs.json'; // Your blog data
 const Blogs = () => {
   return (
     <div id='blogs' className="mt-32 p-8 bg-gray-900 min-h-screen text-white">
-      <h1 className="text-4xl font-bold mb-8">Blogs</h1>
+      <h1 className="text-4xl font-bold mb-8 uppercase">Blogs</h1>
       <p className="text-lg mb-8">
         I believe that an effective way to learn something is by teaching others. I share everything I know about security and development through my articles and a weekly newsletter.
       </p>
