@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope, FaBehance } from 'react-icons/fa';
 
 function Contact() {
   return (
@@ -9,13 +9,17 @@ function Contact() {
         <p className="text-lg mb-4">
           Please don’t hesitate to contact me for more information about my work. I will reply when I’m available.
         </p>
-        <p className="text-lg mb-8">Email: <a href="mailto:raees.info07@gmail.com" className="text-blue-500 hover:underline">raees.info07@gmail.com</a></p>
+        
+        <div className="flex items-center mb-4">
+          <FaEnvelope size={30} className="mr-2 text-gray-400" />
+          <a href="mailto:raees.info07@gmail.com" className="text-lg text-gray-400 hover:underline">Mail me now</a>
+        </div>
         
         <div className="flex space-x-4 mb-8">
           <a href="https://www.facebook.com/raees.azambhatti?mibextid=ZbWKwL" className="hover:text-gray-400"><FaFacebook size={30} /></a>
-          <a href="https://www.twitter.com" className="hover:text-gray-400"><FaTwitter size={30} /></a>
           <a href="https://pk.linkedin.com/in/raeesazam07" className="hover:text-gray-400"><FaLinkedin size={30} /></a>
           <a href="https://github.com/roboraees07" className="hover:text-gray-400"><FaGithub size={30} /></a>
+          <a href="https://www.behance.net/raeesazam" className="hover:text-gray-400"><FaBehance size={30} /></a>
         </div>
 
         <form className="space-y-4">
