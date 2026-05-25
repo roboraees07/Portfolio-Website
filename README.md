@@ -1,6 +1,6 @@
 # Muhammad Raees Azam — Portfolio
 
-Modern AI Engineer & Researcher portfolio (React + Vite + Tailwind). Inspired by [surendiran.ai](https://www.surendiran.ai/) and [jainanurag.me](https://jainanurag.me/).
+Modern AI Engineer & Researcher portfolio (React + Vite + Tailwind).
 
 ## Local development
 
