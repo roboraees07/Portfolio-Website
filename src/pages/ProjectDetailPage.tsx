@@ -5,6 +5,8 @@ import { getProjectById } from '../data/projectDetails'
 import { profile } from '../data/site'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { Footer } from '../components/Footer'
+import { ProjectGallery } from '../components/ProjectGallery'
+import { ProjectVideos } from '../components/ProjectVideos'
 
 export function ProjectDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -118,38 +120,13 @@ export function ProjectDetailPage() {
 
         {project.videos && project.videos.length > 0 && (
           <Section title="Demo Videos">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {project.videos.map((v) => (
-                <div key={v.src} className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--border)' }}>
-                  <p className="px-3 py-2 text-sm font-semibold">{v.title}</p>
-                  <video controls className="w-full" preload="metadata">
-                    <source src={v.src} type="video/mp4" />
-                    Your browser does not support video playback.
-                  </video>
-                </div>
-              ))}
-            </div>
+            <ProjectVideos videos={project.videos} />
           </Section>
         )}
 
         {project.gallery && project.gallery.length > 0 && (
           <Section title="Images & Results">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {project.gallery.map((img) => (
-                <figure
-                  key={img.src}
-                  className="overflow-hidden rounded-xl border"
-                  style={{ borderColor: 'var(--border)' }}
-                >
-                  <img src={img.src} alt={img.title ?? 'Project'} className="h-48 w-full object-cover" loading="lazy" />
-                  {img.title && (
-                    <figcaption className="px-3 py-2 text-xs" style={{ color: 'var(--text-muted)' }}>
-                      {img.title}
-                    </figcaption>
-                  )}
-                </figure>
-              ))}
-            </div>
+            <ProjectGallery images={project.gallery} />
           </Section>
         )}
 
