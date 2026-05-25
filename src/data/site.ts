@@ -1,5 +1,4 @@
-const GH_RAW =
-  'https://raw.githubusercontent.com/roboraees07/Portfolio-Website/main'
+import { media } from '../utils/assets'
 
 export const profile = {
   name: 'Muhammad Raees Azam',
@@ -11,7 +10,7 @@ export const profile = {
   location: 'Istanbul, Türkiye',
   email: 'raees.info07@gmail.com',
   status: 'MSc Artificial Intelligence @ Özyeğin University · Open to AI Engineering & PhD opportunities',
-  portrait: `${GH_RAW}/src/content/Images/Raees%20Azam.png`,
+  portrait: media('profile', 'raees.png'),
   cvPath: `${import.meta.env.BASE_URL}cv.pdf`,
   researchStatement: `I architect AI systems that bridge rigorous research and real-world deployment—from federated and centralized deep learning on edge devices to agentic LLM pipelines in production. My work spans precision agriculture (weed localization, crop health, controlled-environment leaf analysis), computer vision (segmentation, detection, pose estimation), and embedded robotics (Jetson, Raspberry Pi, laser-guided automation).
 
@@ -188,7 +187,7 @@ export const projects: Project[] = [
       'Aligned with MSc thesis on YOLOPosev11 + federated learning',
     ],
     tech: ['PyTorch', 'OpenCV', 'Jetson Nano', 'Raspberry Pi', 'Edge AI', 'IoT'],
-    image: `${GH_RAW}/src/content/projects/project-7/cover.png`,
+    image: media('projects', 'project-7', 'cover.png'),
     links: [
       {
         label: 'GitHub — Weed Localization',
@@ -209,7 +208,7 @@ export const projects: Project[] = [
       'FCN-8s, U-Net, YOLO, ResNet50 on drone and sensor data',
     ],
     tech: ['TensorFlow', 'Keras', 'YOLO', 'UNet', 'Jetson', 'Raspberry Pi', 'SQL'],
-    image: `${GH_RAW}/src/content/projects/project-7/cover.png`,
+    image: media('projects', 'project-7', 'cover.png'),
     links: [{ label: 'CISNR Lab', url: 'https://cisnr.com/' }],
   },
   {
@@ -225,7 +224,7 @@ export const projects: Project[] = [
       '2nd Prize KP Capstone Expo 2024 · PEC fully funded FYP',
     ],
     tech: ['TensorFlow', 'FCN-8s', 'CNN', 'Flutter', 'ArduPilot', 'Mission Planner'],
-    image: `${GH_RAW}/src/content/projects/project-7/cover.png`,
+    image: media('projects', 'project-7', 'cover.png'),
     links: [
       { label: 'FarmTech Repo', url: 'https://github.com/roboraees07/FarmTech' },
       {
@@ -247,7 +246,7 @@ export const projects: Project[] = [
       'Extends NCAI controlled-environment agriculture research',
     ],
     tech: ['YOLO', 'CNN', 'Segmentation', 'PyTorch'],
-    image: `${GH_RAW}/src/content/projects/project-7/cover.png`,
+    image: media('projects', 'project-7', 'cover.png'),
   },
   {
     id: 'lpdr',
@@ -261,7 +260,7 @@ export const projects: Project[] = [
       'Published in Big Data and Cognitive Computing, 2024',
     ],
     tech: ['PyTorch', 'TensorFlow', 'OpenCV', 'YOLO', 'CRNN'],
-    image: `${GH_RAW}/src/content/projects/project-4/cover.png`,
+    image: media('projects', 'project-4', 'cover.png'),
   },
   {
     id: 'lungs-seg',
@@ -271,7 +270,7 @@ export const projects: Project[] = [
     summary: 'Medical image segmentation using FCN-8 and VGG-based deep learning on lung CT/X-ray datasets.',
     highlights: ['FCN-8s architecture', 'Clinical decision support orientation'],
     tech: ['TensorFlow', 'Keras', 'FCN-8', 'OpenCV'],
-    image: `${GH_RAW}/src/content/projects/project-1/cover.png`,
+    image: media('projects', 'project-1', 'cover.png'),
   },
   {
     id: 'road-seg',
@@ -281,7 +280,7 @@ export const projects: Project[] = [
     summary: 'Semantic segmentation for autonomous driving road scenes.',
     highlights: ['Multi-class road scene understanding'],
     tech: ['Deep Learning', 'Segmentation', 'Python'],
-    image: `${GH_RAW}/src/content/projects/project-8/cover.png`,
+    image: media('projects', 'project-8', 'cover.png'),
   },
   {
     id: 'malware',
@@ -291,7 +290,7 @@ export const projects: Project[] = [
     summary: 'ML-based classification of Android malware applications.',
     highlights: ['Feature engineering for mobile security'],
     tech: ['Python', 'Scikit-learn', 'ML'],
-    image: `${GH_RAW}/src/content/projects/project-4/cover.png`,
+    image: media('projects', 'project-4', 'cover.png'),
     links: [
       {
         label: 'GitHub',
@@ -307,7 +306,7 @@ export const projects: Project[] = [
     summary: 'Arduino-based mobile robot with multi-mode autonomous navigation.',
     highlights: ['Embedded control', 'Sensor fusion for navigation'],
     tech: ['Arduino', 'C++', 'Electronics'],
-    image: `${GH_RAW}/src/content/projects/project-3/cover.png`,
+    image: media('projects', 'project-3', 'cover.png'),
     links: [
       {
         label: 'GitHub',
@@ -323,7 +322,7 @@ export const projects: Project[] = [
     summary: 'Programmable robotic arm for STEAM education and prototyping.',
     highlights: ['Mechanical assembly', 'Motor control'],
     tech: ['Arduino', 'Servo Control'],
-    image: `${GH_RAW}/src/content/projects/project-9/cover.png`,
+    image: media('projects', 'project-9', 'cover.png'),
   },
   {
     id: 'tetrax',
@@ -333,7 +332,7 @@ export const projects: Project[] = [
     summary: 'Engineering education hardware — 2nd Prize TechFest 2021.',
     highlights: ['Inter-university exhibition winner'],
     tech: ['Electronics', 'Proteus'],
-    image: `${GH_RAW}/src/content/projects/project-2/cover.png`,
+    image: media('projects', 'project-2', 'cover.png'),
   },
   {
     id: 'smart-home',
@@ -343,7 +342,7 @@ export const projects: Project[] = [
     summary: 'Home automation with IoT sensors and control interfaces.',
     highlights: ['Edwardes STEM exhibition project'],
     tech: ['IoT', 'Arduino', 'Sensors'],
-    image: `${GH_RAW}/src/content/projects/project-6/cover.png`,
+    image: media('projects', 'project-6', 'cover.png'),
     links: [{ label: 'GitHub', url: 'https://github.com/roboraees07/IoT-Based-Home-Automation' }],
   },
   {

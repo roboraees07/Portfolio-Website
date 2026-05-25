@@ -1,5 +1,5 @@
 import { projects, type Project } from './site'
-import { ghMedia } from '../utils/assets'
+import { ghMedia, legacyMedia } from '../utils/assets'
 
 export type CodeSnippet = {
   title: string
@@ -45,9 +45,9 @@ const details: Record<string, Partial<ProjectDetail>> = {
     results:
       'Hardware plant health demos, UAV flights with payload, mobile disease classification. Funded PKR 350,000+; Global Solution Challenge Top 100; PEC Capstone 2nd prize.',
     videos: [
-      { title: 'Mobile App Demo', src: ghMedia(p7, 'App.mp4') },
-      { title: 'Plant Health Analysis', src: ghMedia(p7, 'Plant Video.mp4') },
-      { title: 'UAV Deployment', src: ghMedia(p7, 'UAV.mp4') },
+      { title: 'Mobile App Demo', src: legacyMedia(p7, 'App.mp4') },
+      { title: 'Plant Health Analysis', src: legacyMedia(p7, 'Plant Video.mp4') },
+      { title: 'UAV Deployment', src: legacyMedia(p7, 'UAV.mp4') },
     ],
     gallery: [
       { title: 'Cover', src: ghMedia(p7, 'cover.png') },
