@@ -29,10 +29,14 @@ VITE_BASE_PATH=/ npm run build
 
 ## Deploy on GitHub Pages (free)
 
-1. Push this `portfolio-site` folder to your GitHub repo (e.g. `Portfolio-Website`).
-2. In the repo: **Settings → Pages → Build and deployment → GitHub Actions**.
-3. Push to `main` — the workflow `.github/workflows/deploy.yml` builds and deploys automatically.
-4. Your site will be live at `https://roboraees07.github.io/Portfolio-Website/` (replace with your username/repo).
+**Repo:** [roboraees07/Portfolio-Website](https://github.com/roboraees07/Portfolio-Website)  
+**Live site:** https://roboraees07.github.io/Portfolio-Website/
+
+1. **Settings → Pages → Source:** GitHub Actions  
+2. **Settings → Secrets → Actions:** add `VITE_WEB3FORMS_ACCESS_KEY` (your Web3Forms key)  
+3. Push to `main` — workflow deploys automatically  
+
+See [docs/GITHUB-PAGES.md](docs/GITHUB-PAGES.md) for details.
 
 ## Theme
 
