@@ -1,6 +1,7 @@
 import { ArrowRight, GraduationCap, Sparkles } from 'lucide-react'
 import { CvDownloadButton } from '../components/CvDownloadButton'
 import { links, profile } from '../data/site'
+import { scrollToSection } from '../utils/scroll'
 
 export function Hero() {
   return (
@@ -32,8 +33,9 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#projects"
+            <button
+              type="button"
+              onClick={() => scrollToSection('projects')}
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
               style={{
                 background: 'linear-gradient(135deg, var(--gradient-from), var(--gradient-to))',
@@ -41,7 +43,7 @@ export function Hero() {
             >
               View Projects
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </button>
             <CvDownloadButton />
             <a
               href={links.scholar}

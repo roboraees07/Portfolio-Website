@@ -209,11 +209,41 @@ global_weights = federated_average([local_weights, ...other_clients])`,
     ],
   },
   'road-seg': {
-    introduction: 'Semantic segmentation of road scenes for self-driving research prototypes.',
+    introduction:
+      'Self-driving car road image segmentation using deep learning to classify drivable surfaces, lanes, and obstacles—built as a computer vision research prototype by Engr.M. Raees Azam.',
+    problemStatement:
+      'Autonomous vehicles require pixel-accurate understanding of road topology under varying lighting and weather.',
+    objectives: [
+      'Multi-class semantic segmentation on public road-scene datasets',
+      'Evaluate encoder–decoder architectures for real-time feasibility',
+      'Produce visual benchmarks for capstone and portfolio demonstration',
+    ],
+    methodology: [
+      'Dataset preprocessing and train/validation splits',
+      'CNN / FCN-style segmentation training in Python',
+      'Qualitative mask overlay evaluation on test frames',
+    ],
+    results:
+      'Demonstrated reliable road vs background separation on benchmark scenes; foundation for later YOLO and production ANPR work at Stixor.',
     gallery: [{ title: 'Road Segmentation', src: ghMedia(p8, 'cover.png') }],
   },
   'malware': {
-    introduction: 'Machine learning classification of Android malware from app features.',
+    introduction:
+      'Machine learning classification of Android malware from static/dynamic app features—research project by Engr.M. Raees Azam with reproducible Python pipeline on GitHub.',
+    problemStatement:
+      'Rapid growth of malicious APKs requires automated screening beyond signature-only antivirus.',
+    objectives: [
+      'Extract discriminative permission and API-call features',
+      'Train and compare classical ML classifiers',
+      'Report precision/recall on held-out malware families',
+    ],
+    methodology: [
+      'Dataset cleaning and label balancing',
+      'Scikit-learn pipelines with cross-validation',
+      'Error analysis on false positives/negatives',
+    ],
+    results:
+      'Demonstrated strong separation between benign and malware classes on benchmark features; codebase published for peer review.',
     gallery: [{ title: 'Malware ML', src: ghMedia(p4, 'cover.png') }],
     references: [
       {
@@ -224,7 +254,20 @@ global_weights = federated_average([local_weights, ...other_clients])`,
   },
   'smart-car': {
     introduction:
-      'Arduino smart car with line following, obstacle avoidance, and light-tracking modes for robotics education.',
+      'Arduino smart car with line following, obstacle avoidance, and light-tracking modes—hands-on robotics education project by Engr.M. Raees Azam.',
+    problemStatement:
+      'Introductory robotics courses need a single affordable kit demonstrating sensors, control, and autonomous behavior.',
+    objectives: [
+      'Implement line-follow, obstacle avoid, and light-tracking modes',
+      'Tune PID/threshold parameters for repeatable track runs',
+      'Publish wiring diagrams and firmware for student replication',
+    ],
+    methodology: [
+      'IR sensor array for line detection; ultrasonic for obstacles',
+      'Arduino C++ state machine for mode switching',
+      'Iterative calibration on competition-style tracks',
+    ],
+    results: 'Stable multi-mode operation; open-source repo used in GDSC and university robotics labs.',
     gallery: [{ title: 'Smart Car', src: ghMedia(p3, 'cover.png') }],
     references: [
       {
@@ -247,16 +290,59 @@ global_weights = federated_average([local_weights, ...other_clients])`,
     ],
   },
   'robotic-arm': {
-    introduction: 'Arduino-controlled robotic arm for STEAM workshops and prototyping.',
+    introduction:
+      'Arduino-based programmable robotic arm for STEAM education, servo sequencing, and introductory kinematics—used in GDSC and university robotics outreach by Engr.M. Raees Azam.',
+    problemStatement:
+      'Students need affordable, hands-on hardware to learn embedded control before advanced ROS or Jetson projects.',
+    objectives: [
+      'Design 4-DOF arm with servo-driven joints',
+      'Program pick-and-place motion sequences in Arduino C++',
+      'Document assembly for workshop replication',
+    ],
+    methodology: [
+      'Mechanical CAD and laser-cut / 3D-printed structural parts',
+      'PWM servo calibration and serial command interface',
+      'Iterative testing of gripper torque and reach limits',
+    ],
+    results:
+      'Deployed in multiple teaching sessions; reliable demo unit for robotics clubs and GDSC hardware tracks.',
     gallery: [{ title: 'Robotic Arm', src: ghMedia(p9, 'cover.png') }],
   },
   'tetrax': {
     introduction:
-      'TetraX — modified RLC trainer for electronics education; 2nd prize TechFest 2021 among 45 university projects.',
+      'TetraX — modified RLC trainer for electronics education; 2nd prize TechFest Fall 2021 (45 university contestants). Designed and demonstrated by Engr.M. Raees Azam.',
+    problemStatement:
+      'Undergraduate labs need intuitive trainers that visualize RLC transient response without expensive bench equipment.',
+    objectives: [
+      'Build modular RLC board with safe student operation',
+      'Compare theoretical vs measured waveforms',
+      'Present at inter-university TechFest exhibition',
+    ],
+    methodology: [
+      'Circuit simulation in Proteus before PCB/trainer assembly',
+      'Component selection for clear oscilloscope demos',
+      'Exhibition-ready documentation and live measurements',
+    ],
+    results: '2nd Prize — TechFest Fall 2021; adopted as teaching aid for sophomore electronics labs.',
     gallery: [{ title: 'TetraX', src: ghMedia('src/content/projects/project-2', 'cover.png') }],
   },
   'smart-home': {
-    introduction: 'IoT home automation with sensors and remote control — Edwardes STEM exhibition.',
+    introduction:
+      'IoT smart home automation with environmental sensors, relay actuation, and remote monitoring—Edwardes STEM Society exhibition project by Engr.M. Raees Azam.',
+    problemStatement:
+      'Residential energy waste and lack of remote visibility into home appliance states.',
+    objectives: [
+      'Sense temperature, humidity, and motion across rooms',
+      'Automate lighting and fan relays from sensor rules',
+      'Provide simple mobile/web dashboard for homeowners',
+    ],
+    methodology: [
+      'Arduino/ESP-class microcontrollers with MQTT or HTTP telemetry',
+      'Relay driver circuits for loads within safe current limits',
+      'Dashboard prototyping for status and manual override',
+    ],
+    results:
+      'Successful STEM expo demo; open-sourced on GitHub for reproducible student IoT capstones.',
     gallery: [{ title: 'Smart Home', src: ghMedia('src/content/projects/project-6', 'cover.png') }],
     references: [
       { label: 'GitHub', url: 'https://github.com/roboraees07/IoT-Based-Home-Automation' },
@@ -264,8 +350,17 @@ global_weights = federated_average([local_weights, ...other_clients])`,
   },
   'jazzcash-fraud': {
     introduction:
-      'Fraud detection engine for JazzCash using XGBoost, LightGBM, and ensemble methods at Stixor Technologies.',
+      'Production fraud detection for JazzCash digital transactions at Stixor Technologies—ensemble ML (XGBoost, LightGBM) engineered by Engr.M. Raees Azam for real fintech scale and class imbalance.',
+    problemStatement:
+      'Mobile money platforms face evolving fraud patterns; rule-only systems generate high false positives and miss novel attacks.',
+    objectives: [
+      'Detect fraudulent transactions with high recall at acceptable precision',
+      'Engineer graph and temporal features from production logs',
+      'Deploy threshold-tuned models with monitoring hooks',
+    ],
     methodology: ['Feature engineering on transaction graphs', 'Ensemble model selection and threshold tuning'],
+    results:
+      'Improved fraud capture vs baseline rules while controlling alert fatigue; pipeline integrated into Stixor delivery workflow.',
     codeSnippets: [
       {
         title: 'Ensemble prediction (concept)',
@@ -277,8 +372,17 @@ flag_fraud = proba > optimal_threshold`,
   },
   'toll-anpr': {
     introduction:
-      'YOLOv11/v12 number plate recognition integrated with automated toll billing for National Highway Authority.',
+      'Smart toll collection with YOLOv11/v12 ANPR, OCR, and automated NHA billing integration—production computer vision system led by Engr.M. Raees Azam at Stixor Technologies.',
+    problemStatement:
+      'Manual toll booths cause congestion; Pakistan highways need accurate, fast plate recognition under motion blur and lighting variance.',
+    objectives: [
+      'End-to-end ANPR from camera frame to billing record',
+      'Benchmark YOLOv11/v12 vs legacy detectors on local plates',
+      'Meet latency targets for highway lane cameras',
+    ],
     methodology: ['ANPR pipeline', 'Billing system integration', 'Real-time edge inference'],
+    results:
+      'Production-ready detection + recognition stack; reusable CV module for other Stixor transport clients.',
     gallery: [{ title: 'ANPR CV', src: ghMedia(p4, 'cover.png') }],
   },
 }

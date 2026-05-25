@@ -1,8 +1,8 @@
 import { media } from '../utils/assets'
 
 export const profile = {
-  name: 'Muhammad Raees Azam',
-  shortName: 'Raees Azam',
+  name: 'Engr.M. Raees Azam',
+  shortName: 'Engr. Raees Azam',
   handle: '@raeesazam',
   title: 'AI Engineer & Researcher',
   tagline:

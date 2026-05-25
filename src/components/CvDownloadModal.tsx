@@ -86,7 +86,7 @@ export function CvDownloadModal({ open, onClose }: Props) {
   const handleDownload = () => {
     const a = document.createElement('a')
     a.href = profile.cvPath
-    a.download = 'Muhammad_Raees_Azam_CV.pdf'
+    a.download = 'Engr_M_Raees_Azam_CV.pdf'
     a.click()
   }
 

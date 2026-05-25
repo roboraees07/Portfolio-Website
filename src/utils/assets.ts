@@ -35,8 +35,9 @@ export function ghMedia(...pathParts: string[]) {
   return media(...pathParts)
 }
 
-/** Path for project detail page (respects GitHub Pages base) */
+/** Hash route for project detail (GitHub Pages cannot serve deep paths without hash) */
 export function projectHref(id: string) {
   const base = import.meta.env.BASE_URL
-  return `${base}project/${id}`.replace(/\/{2,}/g, '/')
+  const path = `#/project/${id}`
+  return `${base}${path}`.replace(/\/{2,}/g, '/').replace(/\/#\//, '/#/')
 }

@@ -1,17 +1,25 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { navItems, profile } from '../data/site'
+import { scrollToSection } from '../utils/scroll'
 import { ThemeToggle } from './ThemeToggle'
-
-function navHref(id: string, pathname: string) {
-  return pathname === '/' ? `#${id}` : `/#${id}`
-}
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  const goToSection = (id: string) => {
+    setOpen(false)
+    if (pathname !== '/') {
+      navigate('/')
+      window.setTimeout(() => scrollToSection(id), 150)
+    } else {
+      scrollToSection(id)
+    }
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -42,13 +50,14 @@ export function Navbar() {
         <ul className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => (
             <li key={item.id}>
-              <a
-                href={`#${item.id}`}
+              <button
+                type="button"
+                onClick={() => goToSection(item.id)}
                 className="text-sm font-medium transition hover:opacity-70"
                 style={{ color: 'var(--text-muted)' }}
               >
                 {item.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -75,13 +84,13 @@ export function Navbar() {
           <ul className="flex flex-col gap-3">
             {navItems.map((item) => (
               <li key={item.id}>
-                <a
-                  href={navHref(item.id, pathname)}
-                  className="block text-sm font-medium"
-                  onClick={() => setOpen(false)}
+                <button
+                  type="button"
+                  className="block text-left text-sm font-medium"
+                  onClick={() => goToSection(item.id)}
                 >
                   {item.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

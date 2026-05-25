@@ -1,9 +1,20 @@
 import { ExternalLink } from 'lucide-react'
 import type { Project } from '../data/site'
 import { projectHref } from '../utils/assets'
+import { debugLog } from '../utils/debugLog'
 
 export function ProjectCard({ project }: { project: Project }) {
   const detailUrl = projectHref(project.id)
+
+  const onDetailClick = () => {
+    // #region agent log
+    debugLog('ProjectCard.tsx:onDetailClick', 'project card link clicked', {
+      projectId: project.id,
+      detailUrl,
+      baseUrl: import.meta.env.BASE_URL,
+    }, 'H2')
+    // #endregion
+  }
 
   return (
     <article className="glass-card group flex h-full flex-col overflow-hidden rounded-2xl text-left transition hover:-translate-y-1">
@@ -13,6 +24,7 @@ export function ProjectCard({ project }: { project: Project }) {
         rel="noopener noreferrer"
         className="block"
         title={`Open ${project.name} in a new tab`}
+        onClick={onDetailClick}
       >
         {project.image && (
           <div className="relative aspect-video overflow-hidden">
