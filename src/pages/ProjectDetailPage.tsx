@@ -1,37 +1,14 @@
 import type { ReactNode } from 'react'
-import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { getProjectById } from '../data/projectDetails'
 import { profile } from '../data/site'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { Footer } from '../components/Footer'
-import { debugLog } from '../utils/debugLog'
 
 export function ProjectDetailPage() {
   const { id } = useParams<{ id: string }>()
   const project = id ? getProjectById(id) : undefined
-
-  useEffect(() => {
-    // #region agent log
-    debugLog('ProjectDetailPage.tsx:mount', 'project detail route loaded', {
-      id,
-      found: Boolean(project),
-      hash: window.location.hash,
-      pathname: window.location.pathname,
-      hasIntroduction: Boolean(project?.introduction),
-      sectionCount: [
-        project?.problemStatement,
-        project?.objectives?.length,
-        project?.methodology?.length,
-        project?.gallery?.length,
-        project?.videos?.length,
-        project?.codeSnippets?.length,
-        project?.results,
-      ].filter(Boolean).length,
-    }, project ? 'H4' : 'H1', project ? 'post-fix' : 'pre-fix')
-    // #endregion
-  }, [id, project])
 
   if (!project) {
     return (
