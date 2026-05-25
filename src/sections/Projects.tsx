@@ -11,7 +11,7 @@ export function Projects() {
       <SectionHeading
         eyebrow="Portfolio"
         title="Featured Projects"
-        subtitle="Click any project to open a dedicated page with videos, images, code, and full documentation (opens in a new tab)."
+        subtitle="Click any project for a full case study—videos, images, code snippets, and references. Pages open in a new tab."
       />
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {featured.map((p) => (

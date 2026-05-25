@@ -154,9 +154,9 @@ function requestCv(email, name) {
 
   MailApp.sendEmail({
     to: email,
-    subject: 'CV request received — Muhammad Raees Azam',
+    subject: 'CV request received — Engr.M. Raees Azam',
     htmlBody:
-      '<p>Your request to download the CV was sent to Muhammad Raees Azam.</p>' +
+      '<p>Your request to download the CV was sent to Engr.M. Raees Azam.</p>' +
       '<p>You will receive another email once your request is <strong>approved</strong>.</p>',
   });
 
@@ -184,7 +184,7 @@ function handleApprove(id, props) {
 
   MailApp.sendEmail({
     to: email,
-    subject: 'Your CV download was approved — Muhammad Raees Azam',
+    subject: 'Your CV download was approved — Engr.M. Raees Azam',
     htmlBody:
       '<p>Your request was <strong>approved</strong>.</p>' +
       '<p><a href="' +
@@ -209,7 +209,7 @@ function handleReject(id, props) {
   getSheet().getRange(row.index, 3).setValue('rejected');
   MailApp.sendEmail({
     to: row.email,
-    subject: 'CV download request — Muhammad Raees Azam',
+    subject: 'CV download request — Engr.M. Raees Azam',
     htmlBody:
       '<p>Your request to download the CV was not approved at this time.</p>' +
       '<p>You may contact <a href="mailto:' +
@@ -277,7 +277,7 @@ function sendContact(email, subject, message, name) {
   });
   MailApp.sendEmail({
     to: email,
-    subject: 'Message received — Muhammad Raees Azam',
+    subject: 'Message received — Engr.M. Raees Azam',
     htmlBody:
       '<p>Thank you for reaching out. Your message was delivered and will be reviewed soon.</p>',
   });
