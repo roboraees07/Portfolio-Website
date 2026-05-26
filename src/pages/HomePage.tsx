@@ -24,12 +24,12 @@ export function HomePage() {
         <WhatIDo />
         <About />
         <Research />
-        <Blogs />
         <Projects />
         <Experience />
         <Creative />
         <Skills />
         <Achievements />
+        <Blogs />
         <Contact />
       </main>
       <Footer />

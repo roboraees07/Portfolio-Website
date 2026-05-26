@@ -423,11 +423,11 @@ export const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'research', label: 'Research' },
-  { id: 'blogs', label: 'Blog' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'creative', label: 'Creative' },
   { id: 'achievements', label: 'Awards' },
   { id: 'skills', label: 'Skills' },
+  { id: 'blogs', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
 ]
