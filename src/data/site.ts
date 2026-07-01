@@ -302,13 +302,13 @@ export const projects: Project[] = [
     category: 'research',
     featured: true,
     summary:
-      'Submitted research on precise leaf segmentation and multi-class nutrient deficiency under controlled environments.',
+      'Published AIAI 2025 chapter: YOLOSeg v8 leaf segmentation (97.18% Dice / 98.00% mAP50) plus CNN nutrient-deficiency classification in controlled environments.',
     highlights: [
-      'Co-authored with Zeeshan Shafiq, Tehleel Arif, Gul Muhammad Khan',
-      'Submitted to Journal of Real-Time Image Processing',
-      'Extends NCAI controlled-environment agriculture research',
+      'Co-authored with Zeeshan Shafiq, Adil Shah, Gul Muhammad Khan (NCAI, UET Peshawar)',
+      'Published in AIAI 2025 IFIP WG 12.5 Proceedings, Chapter 24',
+      '13.5 ms/image inference; CNN deficiency accuracy 82.40%',
     ],
-    tech: ['YOLO', 'CNN', 'Segmentation', 'PyTorch'],
+    tech: ['YOLOSeg v8', 'CNN', 'Segmentation', 'PyTorch'],
     image: media('projects', 'project-14', 'cover.png'),
   },
   {
@@ -317,12 +317,13 @@ export const projects: Project[] = [
     category: 'research',
     featured: true,
     summary:
-      'Research Fellow work: custom Pakistani plate dataset, 98.41% detection accuracy, published comparative LPDR study (IF 3.7).',
+      'Comparative LPDR study on a 16,521-image Pakistani dataset — 98.41% mean detection and up to 98.96% recognition accuracy.',
     highlights: [
-      'YOLO, Faster R-CNN, EAST, CRNN, CA-CenterNet evaluation',
-      'Published in Big Data and Cognitive Computing, 2024',
+      'Faster-RCNN (98.35%) vs E2E (98.48%) detection; DNN (98.90%) vs CA-CenterNet (98.96%) recognition',
+      'Published in Big Data and Cognitive Computing, 2024 (IF 3.7)',
+      'Co-authored with Mehak Arshid and Zahid Mahmood, COMSATS Abbottabad',
     ],
-    tech: ['PyTorch', 'TensorFlow', 'OpenCV', 'YOLO', 'CRNN'],
+    tech: ['Faster-RCNN', 'E2E', 'DNN', 'CA-CenterNet', 'OpenCV', 'PyTorch'],
     image: media('projects', 'project-5', 'cover.png'),
   },
   {
@@ -426,7 +427,7 @@ export const projects: Project[] = [
     summary: 'Number plate recognition integrated with automated NHA billing.',
     highlights: ['Stixor · Computer vision in production'],
     tech: ['YOLOv11', 'YOLOv12', 'OpenCV'],
-    image: media('projects', 'project-5', '3.1a.png'),
+    image: media('projects', 'project-5', 'fig3-lp-detection.jpeg'),
   },
 ]
 

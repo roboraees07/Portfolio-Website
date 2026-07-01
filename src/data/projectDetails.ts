@@ -320,43 +320,64 @@ model = get_peft_model(model, lora_config)`,
   },
   'leaf-yoloseg': {
     introduction:
-      'Hybrid YOLOSeg–CNN framework for precise leaf segmentation and multi-class nutrient deficiency detection in controlled environments — submitted to Journal of Real-Time Image Processing.',
+      'Deep learning framework integrating YOLOSeg v8 for precise leaf segmentation and a custom CNN for multi-class nutrient deficiency identification in controlled environments — published at AIAI 2025 (IFIP WG 12.5, Chapter 24).',
     objectives: [
-      'Accurate leaf mask generation under varying lighting',
-      'Multi-class deficiency classification on segmented regions',
+      'Isolate individual leaves with bounding boxes, objectness scores, and segmentation masks',
+      'Classify nutrient deficiencies (B, Ca, Fe, Mg, Mn, K, S, Zn, healthy) on segmented leaf regions',
+      'Deliver real-time inference suitable for smart-incubator and field-edge deployment',
     ],
     methodology: [
-      'YOLOSeg for segmentation mask generation',
-      'CNN head for deficiency classes per leaf instance',
-      'Evaluation on NCAI incubator imagery',
+      'YOLOSeg v8 trained for instance segmentation on controlled-environment crop imagery',
+      'Custom CNN classifier on segmented leaf patches for deficiency categories',
+      'Evaluation on AgriPK-style datasets with Dice, mAP50, precision, recall, and inference-time benchmarks',
     ],
-    results: 'Journal submission in progress; extends published AIAI 2025 workshop work.',
+    results:
+      'YOLOSeg v8: 97.18% Dice/F1, 95.86% precision, 98.20% recall, 97.80% box accuracy, 98.00% mAP50, 13.5 ms/image. CNN deficiency classifier: 82.40% test accuracy, 82.89% precision.',
     gallery: [
-      { title: 'Leaf Segmentation', src: ghMedia(p14, 'leaf-segmentation.png') },
-      { title: 'Deficiency Classification', src: ghMedia(p14, 'deficiency-classification.png') },
-      { title: 'Controlled Environment', src: ghMedia(p14, 'controlled-environment.png') },
+      { title: 'Fig. 5 — Deficiency Training Dataset', src: ghMedia(p14, 'fig5-deficiency-training-dataset.png') },
+      { title: 'Fig. 6 — System Block Diagram', src: ghMedia(p14, 'fig6-system-block-diagram.png') },
+      { title: 'Segmentation Pipeline', src: ghMedia(p14, 'fig-segmentation-pipeline.png') },
+      { title: 'Controlled Environment Deployment', src: ghMedia(p14, 'fig-controlled-environment.png') },
+    ],
+    references: [
+      {
+        label: 'AIAI 2025 Chapter (Springer)',
+        url: 'https://doi.org/10.1007/978-3-031-97313-0_24',
+      },
+      {
+        label: 'Conference Abstract',
+        url: 'https://repository.ifipaiai.org/2025/abstr/25ec09480.html',
+      },
     ],
   },
   'lpdr': {
     introduction:
-      'Comparative LPDR study on a custom Pakistani license plate dataset under unconstrained lighting, fonts, and angles — 98.41% detection and up to 98.96% recognition accuracy.',
-    methodology: [
-      'Dataset collection across diverse plate styles',
-      'Benchmarked YOLO, Faster R-CNN, EAST, CRNN, CA-CenterNet',
-      'GPU training with PyTorch/TensorFlow',
+      'Comparative study on license plate detection and recognition in unconstrained Pakistani traffic — varying illumination, nonstandard plate templates, and diverse English fonts. Experiments on an author-collected dataset of 16,521 images with multi-styled plates.',
+    objectives: [
+      'Benchmark LP detection with Faster-RCNN and end-to-end (E2E) methods',
+      'Compare LP recognition using DNN and CA-CenterNet architectures',
+      'Analyze computational complexity across image resolutions from 1550×900 down to 600×400 pixels',
     ],
-    results: 'Published MDPI paper (IF 3.7); CA-CenterNet + E2E pipelines most efficient for Pakistan.',
+    methodology: [
+      'Custom Pakistani vehicle dataset with cars, motorcycles, pedestrians, and visible plates',
+      'Detection pool: Faster-RCNN with LPLM vs E2E single-pass detector',
+      'Recognition pool: DNN character recognition vs CA-CenterNet corner-aware recognition',
+      'Mean accuracy and execution-time analysis across resolutions',
+    ],
+    results:
+      'Detection: Faster-RCNN 98.35%, E2E 98.48% (mean 98.41%). Recognition: DNN 98.90%, CA-CenterNet 98.96%. E2E and CA-CenterNet are the most efficient detection and recognition methods respectively.',
     gallery: [
-      { title: 'LPDR Overview', src: ghMedia(p5, 'cover.png') },
-      { title: 'Dataset Samples', src: ghMedia(p5, '2.1.png') },
-      { title: 'Detection Pipeline', src: ghMedia(p5, '2.2.png') },
-      { title: 'Model Comparison', src: ghMedia(p5, '2.3.png') },
-      { title: 'Recognition Results', src: ghMedia(p5, '3.1a.png') },
-      { title: 'Plate Detection', src: ghMedia(p5, '3.1b.png') },
-      { title: 'End-to-End LPDR', src: ghMedia(p5, '4.1a.png') },
+      { title: 'Fig. 1 — Nonuniform LP Samples', src: ghMedia(p5, 'fig1-nonuniform-lp-samples.jpeg') },
+      { title: 'Fig. 2 — Dataset Samples', src: ghMedia(p5, 'fig2-dataset-samples.jpeg') },
+      { title: 'Fig. 3 — LP Detection (Faster-RCNN & E2E)', src: ghMedia(p5, 'fig3-lp-detection.jpeg') },
+      { title: 'Fig. 4 — LP Recognition (DNN & CA-CenterNet)', src: ghMedia(p5, 'fig4-lp-recognition.jpeg') },
+      { title: 'Fig. 5 — Computational Complexity', src: ghMedia(p5, 'fig5-computational-complexity.png') },
+      { title: 'Fig. 6 — Mean & Standard Deviation', src: ghMedia(p5, 'fig6-mean-std-comparison.png') },
+      { title: 'Fig. 7 — Challenging LP Cases', src: ghMedia(p5, 'fig7-challenging-cases.png') },
     ],
     references: [
-      { label: 'DOI Publication', url: 'https://doi.org/10.3390/bdcc8110155' },
+      { label: 'MDPI Publication', url: 'https://doi.org/10.3390/bdcc8110155' },
+      { label: 'Article Page', url: 'https://www.mdpi.com/2504-2289/8/11/155' },
     ],
   },
   'lungs-seg': {
@@ -597,12 +618,10 @@ flag_fraud = proba > optimal_threshold`,
     results:
       'Production-ready detection + recognition stack; reusable CV module for other Stixor transport clients.',
     gallery: [
-      { title: 'ANPR Detection', src: ghMedia(p5, '3.1a.png') },
-      { title: 'Plate Localization', src: ghMedia(p5, '3.1b.png') },
-      { title: 'Recognition Pipeline', src: ghMedia(p5, '3.1c.png') },
-      { title: 'End-to-End LPDR', src: ghMedia(p5, '4.1a.png') },
-      { title: 'Model Benchmark', src: ghMedia(p5, '4.1b.png') },
-      { title: 'Field Results', src: ghMedia(p5, '4.1c.png') },
+      { title: 'LP Detection Results', src: ghMedia(p5, 'fig3-lp-detection.jpeg') },
+      { title: 'LP Recognition Results', src: ghMedia(p5, 'fig4-lp-recognition.jpeg') },
+      { title: 'Pakistani Plate Samples', src: ghMedia(p5, 'fig1-nonuniform-lp-samples.jpeg') },
+      { title: 'Challenging Plate Cases', src: ghMedia(p5, 'fig7-challenging-cases.png') },
     ],
   },
 }
