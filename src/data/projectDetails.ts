@@ -25,6 +25,9 @@ const p3 = 'src/content/projects/project-3'
 const p4 = 'src/content/projects/project-4'
 const p8 = 'src/content/projects/project-8'
 const p9 = 'src/content/projects/project-9'
+const p10 = 'src/content/projects/project-10'
+const p11 = 'src/content/projects/project-11'
+const p12 = 'src/content/projects/project-12'
 
 const details: Record<string, Partial<ProjectDetail>> = {
   'agritech-fyp': {
@@ -177,7 +180,13 @@ global_weights = federated_average([local_weights, ...other_clients])`,
     ],
     results:
       '94.82% CAR (+21.72%), 12.73 px MED (−56.3%), 12.33% NE (−51.6%) vs baseline. Full notebooks, trained models, and methodology docs on GitHub.',
-    gallery: [{ title: 'Precision Agriculture', src: ghMedia(p7, 'cover.png') }],
+    gallery: [
+      { title: 'Complete Pipeline Flow', src: ghMedia(p10, 'pipeline-flow.png') },
+      { title: 'Segmentation Model Comparison', src: ghMedia(p10, 'segmentation-comparison.png') },
+      { title: 'Baseline vs Ensemble', src: ghMedia(p10, 'baseline-vs-ensemble.png') },
+      { title: 'Prediction vs Ground Truth', src: ghMedia(p10, 'prediction-vs-ground-truth.png') },
+      { title: 'Results Analysis', src: ghMedia(p10, 'results-analysis.png') },
+    ],
     codeSnippets: [
       {
         title: 'Ensemble localization fusion (concept)',
@@ -216,22 +225,10 @@ x_final = 0.7 * x_ml + 0.3 * x_watershed`,
     results:
       'Fed-MAE: 99.07% central, 98.57% / 98.23% / 98.30% on splits 1–3—outperforming scratch (88–92%) and ImageNet BEiT under heterogeneity. Reproducible scripts and parsed logs on GitHub.',
     gallery: [
-      {
-        title: 'Federated SSL Pipeline',
-        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/federated_learning_overview.png',
-      },
-      {
-        title: 'Accuracy vs Heterogeneity',
-        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/accuracy_vs_heterogeneity.png',
-      },
-      {
-        title: 'Client Composition (Split 3)',
-        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/split3_client_composition.png',
-      },
-      {
-        title: 'Per-Class Recall',
-        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/per_class_recall_splits.png',
-      },
+      { title: 'Federated SSL Pipeline', src: ghMedia(p11, 'cover.png') },
+      { title: 'Accuracy vs Heterogeneity', src: ghMedia(p11, 'accuracy-vs-heterogeneity.png') },
+      { title: 'Client Composition (Split 3)', src: ghMedia(p11, 'split3-client-composition.png') },
+      { title: 'Per-Class Recall', src: ghMedia(p11, 'per-class-recall.png') },
     ],
     codeSnippets: [
       {
@@ -275,7 +272,12 @@ global_weights = weighted_average(local_weights)`,
     ],
     results:
       'Public Kaggle notebook with end-to-end training on 3,834 training and 959 validation samples (images, questions, answers, modality, body part). Reproducible on free Kaggle GPU.',
-    gallery: [{ title: 'Medical VQA', src: ghMedia(p1, 'cover.png') }],
+    gallery: [
+      { title: 'Medical VQA Sample (X-ray)', src: ghMedia(p12, 'cover.png') },
+      { title: 'Chest X-ray VQA', src: ghMedia(p12, 'sample-1.png') },
+      { title: 'Modality Question', src: ghMedia(p12, 'sample-2.png') },
+      { title: 'Clinical Findings', src: ghMedia(p12, 'sample-3.png') },
+    ],
     codeSnippets: [
       {
         title: 'LoRA config for Qwen2-VL (concept)',

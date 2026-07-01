@@ -208,7 +208,7 @@ export const projects: Project[] = [
       'Pixel + bbox feature ensembles with watershed fusion',
     ],
     tech: ['LightGBM', 'Scikit-learn', 'OpenCV', 'Watershed', 'CropAndWeed', 'Python'],
-    image: media('projects', 'project-7', 'cover.png'),
+    image: media('projects', 'project-10', 'cover.png'),
     links: [
       {
         label: 'GitHub',
@@ -229,8 +229,7 @@ export const projects: Project[] = [
       'Table II–style benchmark vs scratch, ImageNet MAE/BEiT, supervised ViT',
     ],
     tech: ['PyTorch', 'ViT', 'MAE', 'Federated Learning', 'FedAvg', 'LeafNet'],
-    image:
-      'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/federated_learning_overview.png',
+    image: media('projects', 'project-11', 'cover.png'),
     links: [
       {
         label: 'GitHub',
@@ -251,7 +250,7 @@ export const projects: Project[] = [
       'Portable pipeline: Kaggle T4 GPU, Colab, or local PC',
     ],
     tech: ['Qwen2-VL', 'LoRA', 'PEFT', 'Transformers', 'PyTorch', 'Hugging Face'],
-    image: media('projects', 'project-1', 'cover.png'),
+    image: media('projects', 'project-12', 'cover.png'),
     links: [
       {
         label: 'Kaggle Notebook',
