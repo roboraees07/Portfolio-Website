@@ -139,19 +139,19 @@ export const experiences: ExperienceEntry[] = [
     org: 'COMSATS University Islamabad, Abbottabad',
     period: 'Jul 2024 – Dec 2024',
     whatIDid: [
-      'Comparative study of LPDR under unconstrained Pakistani conditions.',
-      'Collected and annotated custom multilingual license plate dataset.',
-      'Evaluated YOLO, Faster R-CNN, EAST, CRNN, CA-CenterNet pipelines.',
+      'Comparative LPDR study on unconstrained Pakistani plates (MDPI BDCC, 2024).',
+      'Collected and annotated 16,521-object multilingual license plate dataset.',
+      'Benchmarked Faster-RCNN, E2E, DNN, and CA-CenterNet detection/recognition pipelines.',
     ],
     achievements: [
-      '98.41% average detection accuracy; up to 98.96% recognition accuracy.',
-      'Published IF 3.7 paper in Big Data and Cognitive Computing.',
+      '98.41% mean detection accuracy; up to 98.96% recognition with CA-CenterNet.',
+      'Published IF 3.7 paper — Big Data and Cognitive Computing, vol. 8, no. 11.',
     ],
     learned: [
       'Rigorous experiment design and peer-review rebuttal writing.',
-      'GPU-accelerated training strategies for detection + recognition stacks.',
+      'GPU-accelerated training for two-stage detection + recognition ALPR stacks.',
     ],
-    tools: ['PyTorch', 'TensorFlow', 'YOLO', 'CRNN', 'CA-CenterNet', 'CUDA'],
+    tools: ['PyTorch', 'Faster-RCNN', 'CA-CenterNet', 'OpenCV', 'CUDA'],
   },
   {
     id: 'stixor',

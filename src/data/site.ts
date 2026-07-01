@@ -317,14 +317,18 @@ export const projects: Project[] = [
     category: 'research',
     featured: true,
     summary:
-      'Comparative LPDR study on a 16,521-image Pakistani dataset — 98.41% mean detection and up to 98.96% recognition accuracy.',
+      'Published MDPI study (IF 3.7): comparative LPDR on 16,521-image Pakistani dataset — 98.41% mean detection, 98.96% recognition with CA-CenterNet.',
     highlights: [
-      'Faster-RCNN (98.35%) vs E2E (98.48%) detection; DNN (98.90%) vs CA-CenterNet (98.96%) recognition',
-      'Published in Big Data and Cognitive Computing, 2024 (IF 3.7)',
-      'Co-authored with Mehak Arshid and Zahid Mahmood, COMSATS Abbottabad',
+      'Faster-RCNN 98.35% vs E2E 98.48% detection; DNN 98.90% vs CA-CenterNet 98.96% recognition',
+      'Co-authored with Mehak Arshid & Zahid Mahmood — COMSATS Abbottabad Research Fellow',
+      'E2E + CA-CenterNet recommended for real-time Pakistani ALPR pipelines',
     ],
     tech: ['Faster-RCNN', 'E2E', 'DNN', 'CA-CenterNet', 'OpenCV', 'PyTorch'],
     image: media('projects', 'project-5', 'cover.png'),
+    links: [
+      { label: 'MDPI Paper', url: 'https://doi.org/10.3390/bdcc8110155' },
+      { label: 'Article', url: 'https://www.mdpi.com/2504-2289/8/11/155' },
+    ],
   },
   {
     id: 'lungs-seg',
@@ -427,7 +431,7 @@ export const projects: Project[] = [
     summary: 'Number plate recognition integrated with automated NHA billing.',
     highlights: ['Stixor · Computer vision in production'],
     tech: ['YOLOv11', 'YOLOv12', 'OpenCV'],
-    image: media('projects', 'project-5', 'fig3-lp-detection.jpeg'),
+    image: media('projects', 'project-5', 'fig3-lp-detection.png'),
   },
 ]
 
