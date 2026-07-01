@@ -271,7 +271,7 @@ export const projects: Project[] = [
       'FCN-8s, U-Net, YOLO, ResNet50 on drone and sensor data',
     ],
     tech: ['TensorFlow', 'Keras', 'YOLO', 'UNet', 'Jetson', 'Raspberry Pi', 'SQL'],
-    image: media('projects', 'project-7', 'Deployment-3.png'),
+    image: media('projects', 'project-13', 'cover.png'),
     links: [{ label: 'CISNR Lab', url: 'https://cisnr.com/' }],
   },
   {
@@ -309,7 +309,7 @@ export const projects: Project[] = [
       'Extends NCAI controlled-environment agriculture research',
     ],
     tech: ['YOLO', 'CNN', 'Segmentation', 'PyTorch'],
-    image: media('projects', 'project-7', 'FCN For Segmentation.png'),
+    image: media('projects', 'project-14', 'cover.png'),
   },
   {
     id: 'lpdr',

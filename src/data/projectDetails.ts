@@ -31,6 +31,8 @@ const p9 = 'src/content/projects/project-9'
 const p10 = 'src/content/projects/project-10'
 const p11 = 'src/content/projects/project-11'
 const p12 = 'src/content/projects/project-12'
+const p13 = 'src/content/projects/project-13'
+const p14 = 'src/content/projects/project-14'
 
 const details: Record<string, Partial<ProjectDetail>> = {
   'agritech-fyp': {
@@ -112,11 +114,11 @@ history = model.fit(X_train, Y_train, epochs=200, batch_size=18)`,
     results:
       '5 incubators deployed; AIAI 2025 publication (DOI 10.1007/978-3-031-97313-0_24); ongoing hybrid YOLOSeg–CNN journal submission.',
     gallery: [
-      { title: 'Smart Incubator Deployment', src: ghMedia(p7, 'Deployment-3.png') },
-      { title: 'Leaf Segmentation', src: ghMedia(p7, 'FCN For Segmentation.png') },
-      { title: 'Nutrient Deficiency CNN', src: ghMedia(p7, 'CNN for Rice Plant Classification.png') },
-      { title: 'Field Deployment', src: ghMedia(p7, 'Deployment-1.png') },
-      { title: 'PEC Recognition', src: ghMedia(p7, 'recognition-1.png') },
+      { title: 'CISNR / NCAI Lab', src: ghMedia(p13, 'cover.png') },
+      { title: 'Smart Incubator Facility', src: ghMedia(p13, 'cisnr-lab-2.png') },
+      { title: 'Leaf Segmentation', src: ghMedia(p13, 'leaf-segmentation.png') },
+      { title: 'Nutrient Deficiency CNN', src: ghMedia(p13, 'deficiency-cnn.png') },
+      { title: 'Incubator Deployment', src: ghMedia(p13, 'incubator-deployment.png') },
     ],
     codeSnippets: [
       {
@@ -330,9 +332,9 @@ model = get_peft_model(model, lora_config)`,
     ],
     results: 'Journal submission in progress; extends published AIAI 2025 workshop work.',
     gallery: [
-      { title: 'Leaf Segmentation', src: ghMedia(p7, 'FCN For Segmentation.png') },
-      { title: 'Deficiency Classification', src: ghMedia(p7, 'CNN for Rice Plant Classification.png') },
-      { title: 'Controlled Environment', src: ghMedia(p7, 'Deployment-2.png') },
+      { title: 'Leaf Segmentation', src: ghMedia(p14, 'leaf-segmentation.png') },
+      { title: 'Deficiency Classification', src: ghMedia(p14, 'deficiency-classification.png') },
+      { title: 'Controlled Environment', src: ghMedia(p14, 'controlled-environment.png') },
     ],
   },
   'lpdr': {
