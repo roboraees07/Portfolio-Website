@@ -160,6 +160,150 @@ global_weights = federated_average([local_weights, ...other_clients])`,
       },
     ],
   },
+  'ensemble-weed-localization': {
+    introduction:
+      'Ensemble learning approach for precise weed growing point (stem) localization on the CropAndWeed dataset—Özyeğin University Computer Vision course project (Fall 2025) by Muhammad Raees Azam and Mehak Arshid.',
+    problemStatement:
+      'Targeted robotic weeding requires sub-pixel growing-point accuracy. The WACV 2023 SSD-300/VGG-16 baseline achieves only 73.1% correct assignment on weed stems.',
+    objectives: [
+      'Segment weeds at full 1920×1088 resolution with classical ML ensembles',
+      'Localize growing points via ML regression + watershed hybrid fusion',
+      'Beat state-of-the-art CAR, MED, and normalized error on CropAndWeed',
+    ],
+    methodology: [
+      '12/18 pixel features + 22/29 bbox features with StandardScaler normalization',
+      'Segmentation ensemble: LightGBM, Random Forest, SVM, KNN (weighted voting)',
+      'Localization ensemble: separate X/Y regressors blended with watershed (α = 0.7)',
+    ],
+    results:
+      '94.82% CAR (+21.72%), 12.73 px MED (−56.3%), 12.33% NE (−51.6%) vs baseline. Full notebooks, trained models, and methodology docs on GitHub.',
+    gallery: [{ title: 'Precision Agriculture', src: ghMedia(p7, 'cover.png') }],
+    codeSnippets: [
+      {
+        title: 'Ensemble localization fusion (concept)',
+        language: 'python',
+        code: `# Weighted ML predictions + watershed hybrid
+x_ml = (w_lgb * x_lgb + w_rf * x_rf + w_svm * x_svm) / w_sum
+x_final = 0.7 * x_ml + 0.3 * x_watershed`,
+      },
+    ],
+    references: [
+      {
+        label: 'GitHub Repository',
+        url: 'https://github.com/roboraees07/An-Ensemble-Learning-Approach-for-Precise-Weed-Growing-Point-Localization-in-Agricultural-Fields',
+      },
+      {
+        label: 'CropAndWeed Dataset (WACV 2023)',
+        url: 'https://openaccess.thecvf.com/content/WACV2023/html/Steininger_The_CropAndWeed_Dataset_A_Multi-Modal_Learning_Approach_for_Efficient_Crop_WACV_2023_paper.html',
+      },
+    ],
+  },
+  'fed-mae-leafnet': {
+    introduction:
+      'Federated learning framework with self-supervised MAE pretraining for label-efficient leaf disease classification on LeafNetBinary5—deep learning project at Özyeğin University by Mehak Arshid and Muhammad Raees Azam.',
+    problemStatement:
+      'Leaf disease data is siloed across farms and institutions; centralized training is infeasible and non-IID client splits degrade federated scratch models.',
+    objectives: [
+      'Adapt Fed-MAE (SSL-FL) to binary healthy vs. diseased LeafNet across 5 clients',
+      'Benchmark scratch, ImageNet init, and federated SSL under Dirichlet heterogeneity',
+      'Maintain high accuracy as client data becomes more imbalanced (α down to 0.5)',
+    ],
+    methodology: [
+      'ViT-B/16 backbone with FedAvg (1 local epoch, 5 clients)',
+      'Dirichlet non-IID splits (α ∈ {100, 1.0, 0.5}) aligned with Yan et al. SSL-FL',
+      'Federated MAE pretrain (1600 rounds) + federated fine-tuning per split',
+    ],
+    results:
+      'Fed-MAE: 99.07% central, 98.57% / 98.23% / 98.30% on splits 1–3—outperforming scratch (88–92%) and ImageNet BEiT under heterogeneity. Reproducible scripts and parsed logs on GitHub.',
+    gallery: [
+      {
+        title: 'Federated SSL Pipeline',
+        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/federated_learning_overview.png',
+      },
+      {
+        title: 'Accuracy vs Heterogeneity',
+        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/accuracy_vs_heterogeneity.png',
+      },
+      {
+        title: 'Client Composition (Split 3)',
+        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/split3_client_composition.png',
+      },
+      {
+        title: 'Per-Class Recall',
+        src: 'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/per_class_recall_splits.png',
+      },
+    ],
+    codeSnippets: [
+      {
+        title: 'Federated averaging round (concept)',
+        language: 'python',
+        code: `# FedAvg after local MAE pretrain on each client
+for client in clients:
+    local_weights[client] = train_one_epoch(model, client_data)
+global_weights = weighted_average(local_weights)`,
+      },
+    ],
+    references: [
+      {
+        label: 'GitHub Repository',
+        url: 'https://github.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet',
+      },
+      {
+        label: 'Fed-MAE Paper (Yan et al.)',
+        url: 'https://arxiv.org/abs/2205.08576',
+      },
+      {
+        label: 'SSL-FL Codebase',
+        url: 'https://github.com/rui-yan/SSL-FL',
+      },
+    ],
+  },
+  'medical-vqa-qwen2vl': {
+    introduction:
+      'Complete standalone multimodal medical vision question answering system—Qwen2-VL fine-tuned with LoRA on the Medical Vision LLM Dataset, published as a public Kaggle notebook by Engr.M. Raees Azam.',
+    problemStatement:
+      'Clinical imaging workflows need models that answer diagnostic questions from medical images, but full VLM fine-tuning is memory-heavy and hard to reproduce across platforms.',
+    objectives: [
+      'Answer diagnostic questions from medical images using Qwen2-VL',
+      'Fine-tune efficiently with LoRA on Medical Vision LLM Dataset splits',
+      'Evaluate with BLEU, ROUGE, F1, and exact-match metrics',
+    ],
+    methodology: [
+      'Auto-detect Kaggle, Colab, or local environment; download model/dataset if missing',
+      'Qwen2-VL-2B/7B-Instruct with PEFT LoRA (r=16, α=32) on vision-language layers',
+      'Custom preprocessing collator, gradient checkpointing, and fp16 training on T4 GPU',
+    ],
+    results:
+      'Public Kaggle notebook with end-to-end training on 3,834 training and 959 validation samples (images, questions, answers, modality, body part). Reproducible on free Kaggle GPU.',
+    gallery: [{ title: 'Medical VQA', src: ghMedia(p1, 'cover.png') }],
+    codeSnippets: [
+      {
+        title: 'LoRA config for Qwen2-VL (concept)',
+        language: 'python',
+        code: `lora_config = LoraConfig(
+    r=16, lora_alpha=32,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                    "gate_proj", "up_proj", "down_proj"],
+    task_type="CAUSAL_LM",
+)
+model = get_peft_model(model, lora_config)`,
+      },
+    ],
+    references: [
+      {
+        label: 'Kaggle Notebook',
+        url: 'https://www.kaggle.com/code/raeesazam/notebookbc0be64ed5',
+      },
+      {
+        label: 'Medical Vision LLM Dataset',
+        url: 'https://huggingface.co/datasets/robailleo/medical-vision-llm-dataset',
+      },
+      {
+        label: 'Qwen2-VL Model',
+        url: 'https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct',
+      },
+    ],
+  },
   'leaf-yoloseg': {
     introduction:
       'Hybrid YOLOSeg–CNN framework for precise leaf segmentation and multi-class nutrient deficiency detection in controlled environments — submitted to Journal of Real-Time Image Processing.',

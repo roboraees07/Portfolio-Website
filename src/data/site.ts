@@ -196,6 +196,70 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'ensemble-weed-localization',
+    name: 'Ensemble Weed Growing Point Localization (CropAndWeed)',
+    category: 'research',
+    featured: true,
+    summary:
+      'Özyeğin University CV project: ensemble ML (LightGBM, RF, SVM, KNN) + watershed hybrid localization on CropAndWeed—94.82% CAR vs 73.1% SSD-300/VGG-16 baseline.',
+    highlights: [
+      '94.82% CAR (+21.72% vs WACV 2023 baseline)',
+      '12.73 px MED — 56.3% lower localization error',
+      'Pixel + bbox feature ensembles with watershed fusion',
+    ],
+    tech: ['LightGBM', 'Scikit-learn', 'OpenCV', 'Watershed', 'CropAndWeed', 'Python'],
+    image: media('projects', 'project-7', 'cover.png'),
+    links: [
+      {
+        label: 'GitHub',
+        url: 'https://github.com/roboraees07/An-Ensemble-Learning-Approach-for-Precise-Weed-Growing-Point-Localization-in-Agricultural-Fields',
+      },
+    ],
+  },
+  {
+    id: 'fed-mae-leafnet',
+    name: 'Federated MAE Pretraining on LeafNet (Fed-MAE)',
+    category: 'research',
+    featured: true,
+    summary:
+      'Federated self-supervised learning for label-efficient leaf disease classification on LeafNetBinary5—Fed-MAE reaches ~99.1% central and ~98.2–98.6% under non-IID splits.',
+    highlights: [
+      'ViT-B/16 + FedAvg across 5 Dirichlet-partitioned clients',
+      'Stable accuracy under α ∈ {100, 1.0, 0.5} heterogeneity',
+      'Table II–style benchmark vs scratch, ImageNet MAE/BEiT, supervised ViT',
+    ],
+    tech: ['PyTorch', 'ViT', 'MAE', 'Federated Learning', 'FedAvg', 'LeafNet'],
+    image:
+      'https://raw.githubusercontent.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet/main/docs/images/federated_learning_overview.png',
+    links: [
+      {
+        label: 'GitHub',
+        url: 'https://github.com/roboraees07/Federated-Learning-Framework-with-Self-Supervised-Pretraining-on-LeafNet',
+      },
+    ],
+  },
+  {
+    id: 'medical-vqa-qwen2vl',
+    name: 'Medical Vision QA with Qwen2-VL (Kaggle)',
+    category: 'research',
+    featured: true,
+    summary:
+      'Complete multimodal medical VQA on Kaggle: Qwen2-VL fine-tuned with LoRA on the Medical Vision LLM Dataset (3,834 train / 959 val)—BLEU, ROUGE, F1, and exact-match evaluation.',
+    highlights: [
+      'Qwen2-VL + LoRA (~1% trainable parameters)',
+      'Medical Vision LLM Dataset — diagnostic Q&A from images',
+      'Portable pipeline: Kaggle T4 GPU, Colab, or local PC',
+    ],
+    tech: ['Qwen2-VL', 'LoRA', 'PEFT', 'Transformers', 'PyTorch', 'Hugging Face'],
+    image: media('projects', 'project-1', 'cover.png'),
+    links: [
+      {
+        label: 'Kaggle Notebook',
+        url: 'https://www.kaggle.com/code/raeesazam/notebookbc0be64ed5',
+      },
+    ],
+  },
+  {
     id: 'ncai-hec',
     name: 'HEC-Funded Smart Agriculture @ NCAI, UET Peshawar',
     category: 'research',
