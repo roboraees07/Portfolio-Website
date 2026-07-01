@@ -19,6 +19,9 @@ export type ProjectDetail = Project & {
   references?: { label: string; url: string }[]
 }
 
+const p2 = 'src/content/projects/project-2'
+const p5 = 'src/content/projects/project-5'
+const p6 = 'src/content/projects/project-6'
 const p7 = 'src/content/projects/project-7'
 const p1 = 'src/content/projects/project-1'
 const p3 = 'src/content/projects/project-3'
@@ -109,9 +112,11 @@ history = model.fit(X_train, Y_train, epochs=200, batch_size=18)`,
     results:
       '5 incubators deployed; AIAI 2025 publication (DOI 10.1007/978-3-031-97313-0_24); ongoing hybrid YOLOSeg–CNN journal submission.',
     gallery: [
-      { title: 'AgriTech System', src: ghMedia(p7, 'cover.png') },
+      { title: 'Smart Incubator Deployment', src: ghMedia(p7, 'Deployment-3.png') },
       { title: 'Leaf Segmentation', src: ghMedia(p7, 'FCN For Segmentation.png') },
-      { title: 'Deficiency CNN', src: ghMedia(p7, 'CNN for Rice Plant Classification.png') },
+      { title: 'Nutrient Deficiency CNN', src: ghMedia(p7, 'CNN for Rice Plant Classification.png') },
+      { title: 'Field Deployment', src: ghMedia(p7, 'Deployment-1.png') },
+      { title: 'PEC Recognition', src: ghMedia(p7, 'recognition-1.png') },
     ],
     codeSnippets: [
       {
@@ -146,7 +151,12 @@ log_to_db(timestamp=now(), label=label, incubator_id=device_id)`,
       'Jetson/Raspberry Pi inference + laser control integration',
     ],
     results: 'Ongoing research; ensemble and pose models on GitHub; edge pipeline prototypes.',
-    gallery: [{ title: 'Precision Agriculture', src: ghMedia(p7, 'cover.png') }],
+    gallery: [
+      { title: 'Weed Localization Results', src: ghMedia(p10, 'prediction-vs-ground-truth.png') },
+      { title: 'Pipeline Flow', src: ghMedia(p10, 'pipeline-flow.png') },
+      { title: 'Segmentation Comparison', src: ghMedia(p10, 'segmentation-comparison.png') },
+      { title: 'Baseline vs Ensemble', src: ghMedia(p10, 'baseline-vs-ensemble.png') },
+    ],
     codeSnippets: [
       {
         title: 'Federated learning round (concept)',
@@ -320,8 +330,9 @@ model = get_peft_model(model, lora_config)`,
     ],
     results: 'Journal submission in progress; extends published AIAI 2025 workshop work.',
     gallery: [
-      { title: 'Segmentation', src: ghMedia(p7, 'FCN For Segmentation.png') },
-      { title: 'Classification', src: ghMedia(p7, 'CNN for Rice Plant Classification.png') },
+      { title: 'Leaf Segmentation', src: ghMedia(p7, 'FCN For Segmentation.png') },
+      { title: 'Deficiency Classification', src: ghMedia(p7, 'CNN for Rice Plant Classification.png') },
+      { title: 'Controlled Environment', src: ghMedia(p7, 'Deployment-2.png') },
     ],
   },
   'lpdr': {
@@ -333,7 +344,15 @@ model = get_peft_model(model, lora_config)`,
       'GPU training with PyTorch/TensorFlow',
     ],
     results: 'Published MDPI paper (IF 3.7); CA-CenterNet + E2E pipelines most efficient for Pakistan.',
-    gallery: [{ title: 'LPDR', src: ghMedia(p4, 'cover.png') }],
+    gallery: [
+      { title: 'LPDR Overview', src: ghMedia(p5, 'cover.png') },
+      { title: 'Dataset Samples', src: ghMedia(p5, '2.1.png') },
+      { title: 'Detection Pipeline', src: ghMedia(p5, '2.2.png') },
+      { title: 'Model Comparison', src: ghMedia(p5, '2.3.png') },
+      { title: 'Recognition Results', src: ghMedia(p5, '3.1a.png') },
+      { title: 'Plate Detection', src: ghMedia(p5, '3.1b.png') },
+      { title: 'End-to-End LPDR', src: ghMedia(p5, '4.1a.png') },
+    ],
     references: [
       { label: 'DOI Publication', url: 'https://doi.org/10.3390/bdcc8110155' },
     ],
@@ -346,7 +365,13 @@ model = get_peft_model(model, lora_config)`,
       'FCN-8s + VGG feature extractor; SGD optimizer, 200 epochs',
     ],
     results: 'Accurate lung masks despite limited data; real-time inference potential.',
-    gallery: [{ title: 'Lungs Project', src: ghMedia(p1, 'cover.png') }],
+    gallery: [
+      { title: 'Lung Segmentation', src: ghMedia(p1, 'cover.png') },
+      { title: 'Architecture Diagram', src: ghMedia(p1, 'diagram.png') },
+      { title: 'Dataset Samples', src: ghMedia(p1, 'dataset-view.png') },
+      { title: 'Segmentation Results', src: ghMedia(p1, 'results-1.png') },
+      { title: 'Mask Overlay', src: ghMedia(p1, 'results-2.png') },
+    ],
     references: [
       {
         label: 'Colab Notebook',
@@ -371,7 +396,14 @@ model = get_peft_model(model, lora_config)`,
     ],
     results:
       'Demonstrated reliable road vs background separation on benchmark scenes; foundation for later YOLO and production ANPR work at Stixor.',
-    gallery: [{ title: 'Road Segmentation', src: ghMedia(p8, 'cover.png') }],
+    gallery: [
+      { title: 'Road Segmentation', src: ghMedia(p8, 'cover.png') },
+      { title: 'Road Dataset', src: ghMedia(p8, 'Road Dataset.png') },
+      { title: '12-Class Labels', src: ghMedia(p8, '12 classes.png') },
+      { title: 'FCN-8 Architecture', src: ghMedia(p8, 'FCN8.png') },
+      { title: 'Segmentation Results', src: ghMedia(p8, 'RESULTS-1.png') },
+      { title: 'Mask Overlay', src: ghMedia(p8, 'RESULTS-2.png') },
+    ],
   },
   'malware': {
     introduction:
@@ -390,7 +422,12 @@ model = get_peft_model(model, lora_config)`,
     ],
     results:
       'Demonstrated strong separation between benign and malware classes on benchmark features; codebase published for peer review.',
-    gallery: [{ title: 'Malware ML', src: ghMedia(p4, 'cover.png') }],
+    gallery: [
+      { title: 'Malware Classification', src: ghMedia(p4, 'cover.png') },
+      { title: 'Feature Heatmap', src: ghMedia(p4, 'Heatmap.png') },
+      { title: 'Dataset Balance', src: ghMedia(p4, 'dataset Balance.png') },
+      { title: 'Model Results', src: ghMedia(p4, 'results.png') },
+    ],
     references: [
       {
         label: 'GitHub',
@@ -414,7 +451,13 @@ model = get_peft_model(model, lora_config)`,
       'Iterative calibration on competition-style tracks',
     ],
     results: 'Stable multi-mode operation; open-source repo used in GDSC and university robotics labs.',
-    gallery: [{ title: 'Smart Car', src: ghMedia(p3, 'cover.png') }],
+    gallery: [
+      { title: 'Smart Car', src: ghMedia(p3, 'cover.png') },
+      { title: 'Block Diagram', src: ghMedia(p3, 'Block Diagram.png') },
+      { title: 'Obstacle Avoidance', src: ghMedia(p3, 'Obstacle Avoidance.png') },
+      { title: 'Light Tracking', src: ghMedia(p3, 'Light Following.png') },
+      { title: 'Arduino Pinout', src: ghMedia(p3, 'arduino-uno-pinout.jpg') },
+    ],
     references: [
       {
         label: 'GitHub',
@@ -452,7 +495,14 @@ model = get_peft_model(model, lora_config)`,
     ],
     results:
       'Deployed in multiple teaching sessions; reliable demo unit for robotics clubs and GDSC hardware tracks.',
-    gallery: [{ title: 'Robotic Arm', src: ghMedia(p9, 'cover.png') }],
+    gallery: [
+      { title: 'Robotic Arm', src: ghMedia(p9, 'cover.png') },
+      { title: 'Hardware Model', src: ghMedia(p9, 'Hardware Model.png') },
+      { title: 'Block Diagram', src: ghMedia(p9, 'Block Diagram-1.png') },
+      { title: 'Circuit Diagram', src: ghMedia(p9, 'Circuit Diagram.png') },
+      { title: 'Simulation Model', src: ghMedia(p9, 'semulation-model.png') },
+      { title: 'Simulation Results', src: ghMedia(p9, 'Simulation Results.png') },
+    ],
   },
   'tetrax': {
     introduction:
@@ -470,7 +520,14 @@ model = get_peft_model(model, lora_config)`,
       'Exhibition-ready documentation and live measurements',
     ],
     results: '2nd Prize — TechFest Fall 2021; adopted as teaching aid for sophomore electronics labs.',
-    gallery: [{ title: 'TetraX', src: ghMedia('src/content/projects/project-2', 'cover.png') }],
+    gallery: [
+      { title: 'TetraX Trainer', src: ghMedia(p2, 'cover.png') },
+      { title: 'Final Build', src: ghMedia(p2, 'Final-1.png') },
+      { title: 'Exhibition Demo', src: ghMedia(p2, 'Final-2.png') },
+      { title: 'Circuit Design', src: ghMedia(p2, 'Circuit Design.png') },
+      { title: 'Circuit Simulation', src: ghMedia(p2, 'Circuit Simulation.png') },
+      { title: 'PCB Fabrication', src: ghMedia(p2, 'PCB Fabrication.png') },
+    ],
   },
   'smart-home': {
     introduction:
@@ -489,7 +546,10 @@ model = get_peft_model(model, lora_config)`,
     ],
     results:
       'Successful STEM expo demo; open-sourced on GitHub for reproducible student IoT capstones.',
-    gallery: [{ title: 'Smart Home', src: ghMedia('src/content/projects/project-6', 'cover.png') }],
+    gallery: [
+      { title: 'Smart Home System', src: ghMedia(p6, 'cover.png') },
+      { title: 'IoT Project Banner', src: ghMedia(p6, 'banner.jfif') },
+    ],
     references: [
       { label: 'GitHub', url: 'https://github.com/roboraees07/IoT-Based-Home-Automation' },
     ],
@@ -507,6 +567,11 @@ model = get_peft_model(model, lora_config)`,
     methodology: ['Feature engineering on transaction graphs', 'Ensemble model selection and threshold tuning'],
     results:
       'Improved fraud capture vs baseline rules while controlling alert fatigue; pipeline integrated into Stixor delivery workflow.',
+    gallery: [
+      { title: 'Feature Heatmap', src: ghMedia(p4, 'Heatmap.png') },
+      { title: 'Dataset Balance', src: ghMedia(p4, 'dataset Balance.png') },
+      { title: 'Ensemble Results', src: ghMedia(p4, 'results.png') },
+    ],
     codeSnippets: [
       {
         title: 'Ensemble prediction (concept)',
@@ -529,7 +594,14 @@ flag_fraud = proba > optimal_threshold`,
     methodology: ['ANPR pipeline', 'Billing system integration', 'Real-time edge inference'],
     results:
       'Production-ready detection + recognition stack; reusable CV module for other Stixor transport clients.',
-    gallery: [{ title: 'ANPR CV', src: ghMedia(p4, 'cover.png') }],
+    gallery: [
+      { title: 'ANPR Detection', src: ghMedia(p5, '3.1a.png') },
+      { title: 'Plate Localization', src: ghMedia(p5, '3.1b.png') },
+      { title: 'Recognition Pipeline', src: ghMedia(p5, '3.1c.png') },
+      { title: 'End-to-End LPDR', src: ghMedia(p5, '4.1a.png') },
+      { title: 'Model Benchmark', src: ghMedia(p5, '4.1b.png') },
+      { title: 'Field Results', src: ghMedia(p5, '4.1c.png') },
+    ],
   },
 }
 

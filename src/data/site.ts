@@ -187,7 +187,7 @@ export const projects: Project[] = [
       'Aligned with MSc thesis on YOLOPosev11 + federated learning',
     ],
     tech: ['PyTorch', 'OpenCV', 'Jetson Nano', 'Raspberry Pi', 'Edge AI', 'IoT'],
-    image: media('projects', 'project-7', 'cover.png'),
+    image: media('projects', 'project-10', 'prediction-vs-ground-truth.png'),
     links: [
       {
         label: 'GitHub — Weed Localization',
@@ -271,7 +271,7 @@ export const projects: Project[] = [
       'FCN-8s, U-Net, YOLO, ResNet50 on drone and sensor data',
     ],
     tech: ['TensorFlow', 'Keras', 'YOLO', 'UNet', 'Jetson', 'Raspberry Pi', 'SQL'],
-    image: media('projects', 'project-7', 'cover.png'),
+    image: media('projects', 'project-7', 'Deployment-3.png'),
     links: [{ label: 'CISNR Lab', url: 'https://cisnr.com/' }],
   },
   {
@@ -309,7 +309,7 @@ export const projects: Project[] = [
       'Extends NCAI controlled-environment agriculture research',
     ],
     tech: ['YOLO', 'CNN', 'Segmentation', 'PyTorch'],
-    image: media('projects', 'project-7', 'cover.png'),
+    image: media('projects', 'project-7', 'FCN For Segmentation.png'),
   },
   {
     id: 'lpdr',
@@ -323,7 +323,7 @@ export const projects: Project[] = [
       'Published in Big Data and Cognitive Computing, 2024',
     ],
     tech: ['PyTorch', 'TensorFlow', 'OpenCV', 'YOLO', 'CRNN'],
-    image: media('projects', 'project-4', 'cover.png'),
+    image: media('projects', 'project-5', 'cover.png'),
   },
   {
     id: 'lungs-seg',
@@ -416,6 +416,7 @@ export const projects: Project[] = [
     summary: 'Production ML for fraudulent transaction detection using XGBoost, LGBM, and ensembles.',
     highlights: ['Stixor Technologies · Real-world fintech scale'],
     tech: ['XGBoost', 'LightGBM', 'Python'],
+    image: media('projects', 'project-4', 'Heatmap.png'),
   },
   {
     id: 'toll-anpr',
@@ -425,6 +426,7 @@ export const projects: Project[] = [
     summary: 'Number plate recognition integrated with automated NHA billing.',
     highlights: ['Stixor · Computer vision in production'],
     tech: ['YOLOv11', 'YOLOv12', 'OpenCV'],
+    image: media('projects', 'project-5', '3.1a.png'),
   },
 ]
 
