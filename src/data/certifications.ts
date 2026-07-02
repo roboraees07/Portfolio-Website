@@ -10,9 +10,6 @@ export type Certification = {
 }
 
 const googleSkillsBadgeImage = 'https://images.credly.com/images/ba7d317c-0441-493d-9297-840162892581/image.png'
-const googleDevelopersBadgeImage =
-  'https://www.gstatic.com/images/branding/product/2x/google_cloud_96dp.png'
-
 export const certifications: Certification[] = [
   {
     id: 'credly-artificial-intelligence-essentials-v2',
@@ -325,7 +322,7 @@ export const certifications: Certification[] = [
     id: 'gdev-solution-challenge-2024-submitted',
     name: 'Solution Challenge 2024 — Submitted',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/events/community/solution-challenge/2024/submitted/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/events/community/solution-challenge/2024/submitted?u=115769942136393563919',
     source: 'google-developers',
@@ -334,7 +331,7 @@ export const certifications: Certification[] = [
     id: 'gdev-google-skills-earned-badge',
     name: 'Google Skills — Earned Badge',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/skillsboost/earned-badge/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/skillsboost/earned-badge?u=115769942136393563919',
     source: 'google-developers',
@@ -343,7 +340,7 @@ export const certifications: Certification[] = [
     id: 'gdev-cloud-innovators-2021-member',
     name: 'Google Cloud Innovators — 2021 Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/innovators/cloud/2021_member/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/community/innovators/cloud/2021_member?u=115769942136393563919',
     source: 'google-developers',
@@ -352,7 +349,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdsc-leads-playlist',
     name: 'GDSC Leads Playlist',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/playlists/gdsc/gdsc-leads/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/playlists/gdsc/gdsc-leads?u=115769942136393563919',
     source: 'google-developers',
@@ -361,7 +358,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdg-live-pakistan-member',
     name: 'GDG Live Pakistan — Chapter Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gdg/chapter/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/community/gdg/chapter/member/gdg-live-pakistan?u=115769942136393563919',
     source: 'google-developers',
@@ -370,7 +367,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdg-peshawar-member',
     name: 'GDG Peshawar — Chapter Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gdg/chapter/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/community/gdg/chapter/member/gdg-peshawar?u=115769942136393563919',
     source: 'google-developers',
@@ -379,7 +376,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdg-member',
     name: 'GDG — Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gdg/member/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/gdg/member?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -387,7 +384,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdgoc-member',
     name: 'GDGoC — Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gdg/GDGoC/member/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/gdg/GDGoC/member?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -395,7 +392,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdg-discovery',
     name: 'GDG — Discovery',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gdg/discovery/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/gdg/discovery?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -403,7 +400,7 @@ export const certifications: Certification[] = [
     id: 'gdev-recognition-learnings',
     name: 'Recognitions — Learnings',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/recognitions/learnings/learnings.svg',
     verificationLink: 'https://developers.google.com/profile/badges/recognitions/learnings?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -411,7 +408,7 @@ export const certifications: Certification[] = [
     id: 'gdev-going-further-object-detection',
     name: 'ML Playlist — Going Further: Object Detection',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/playlists/ml/going-further-object-detection/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/playlists/ml/going-further-object-detection?u=115769942136393563919',
     source: 'google-developers',
@@ -420,7 +417,7 @@ export const certifications: Certification[] = [
     id: 'gdev-mobile-text-classification',
     name: 'ML Playlist — Mobile Text Classification',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/playlists/ml/get-started-mobile-text-classification/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/playlists/ml/get-started-mobile-text-classification?u=115769942136393563919',
     source: 'google-developers',
@@ -429,7 +426,7 @@ export const certifications: Certification[] = [
     id: 'gdev-maps-innovators',
     name: 'Google Maps Innovators',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/innovators/maps/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/innovators/maps?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -437,7 +434,7 @@ export const certifications: Certification[] = [
     id: 'gdev-devfest-2024-attendee',
     name: 'DevFest 2024 — Attendee',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/events/community/devfest/2024/attendee/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/events/community/devfest/2024/attendee?u=115769942136393563919',
     source: 'google-developers',
@@ -446,7 +443,7 @@ export const certifications: Certification[] = [
     id: 'gdev-ai-skills-quest-intermediate',
     name: 'AI Skills Quest — Intermediate',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/innovators/cloud/ai_skills_quest_intermediate/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/community/innovators/cloud/ai_skills_quest_intermediate?u=115769942136393563919',
     source: 'google-developers',
@@ -455,7 +452,7 @@ export const certifications: Certification[] = [
     id: 'gdev-image-classification-playlist',
     name: 'ML Playlist — Get Started: Image Classification',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/playlists/ml/get-started-image-classification/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/playlists/ml/get-started-image-classification?u=115769942136393563919',
     source: 'google-developers',
@@ -464,7 +461,7 @@ export const certifications: Certification[] = [
     id: 'gdev-io-2024-registered',
     name: 'Google I/O 2024 — Registered',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/events/io/2024/registered/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/events/io/2024/registered?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -472,7 +469,7 @@ export const certifications: Certification[] = [
     id: 'gdev-devfest-2023-attendee',
     name: 'DevFest 2023 — Attendee',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/events/community/devfest/2023/attendee/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/events/community/devfest/2023/attendee?u=115769942136393563919',
     source: 'google-developers',
@@ -481,7 +478,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gde-follower',
     name: 'Google Developer Experts — Follower',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gde/follower/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/gde/follower?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -489,7 +486,7 @@ export const certifications: Certification[] = [
     id: 'gdev-gdsc-2023-core-member',
     name: 'GDSC 2023 — Core Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/gdsc/2023/core-member/badge.svg',
     verificationLink:
       'https://developers.google.com/profile/badges/community/gdsc/2023/core-member?u=115769942136393563919',
     source: 'google-developers',
@@ -498,7 +495,7 @@ export const certifications: Certification[] = [
     id: 'gdev-first-playlist',
     name: 'First Playlist',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/playlists/first-playlist/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/playlists/first-playlist?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -506,7 +503,7 @@ export const certifications: Certification[] = [
     id: 'gdev-first-codelab',
     name: 'First Codelab',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/codelabs/first-codelab/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/codelabs/first-codelab?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -514,7 +511,7 @@ export const certifications: Certification[] = [
     id: 'gdev-dsc-2021-core-member',
     name: 'DSC 2021 — Core Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/dsc/2021/core_member/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/dsc/2021/core_member?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -522,7 +519,7 @@ export const certifications: Certification[] = [
     id: 'gdev-dsc-2021-member',
     name: 'DSC 2021 — Member',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/community/dsc/2021/member/badge.svg',
     verificationLink: 'https://developers.google.com/profile/badges/community/dsc/2021/member?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -530,7 +527,7 @@ export const certifications: Certification[] = [
     id: 'gdev-created-profile',
     name: 'Created Profile',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/profile/created-profile/created_profile.svg',
     verificationLink: 'https://developers.google.com/profile/badges/profile/created-profile?u=115769942136393563919',
     source: 'google-developers',
   },
@@ -538,7 +535,7 @@ export const certifications: Certification[] = [
     id: 'gdev-google-developer-profile',
     name: 'Google Developer Program Profile Badges',
     issuer: 'Google for Developers',
-    image: googleDevelopersBadgeImage,
+    image: 'https://developers.google.com/static/profile/badges/profile/created-profile/created_profile.svg',
     verificationLink: 'https://me.developers.google.com/u/115769942136393563919',
     source: 'google-developers',
   },
