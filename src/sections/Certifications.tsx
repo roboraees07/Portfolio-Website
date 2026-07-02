@@ -8,6 +8,35 @@ function sourceLabel(source: Certification['source']) {
   return 'Google Developers'
 }
 
+function googleDeveloperBadgeImageFromLink(link: string): string | null {
+  if (!link.includes('developers.google.com/profile/badges/')) return null
+
+  const [, rawPath = ''] = link.split('/profile/badges/')
+  const path = rawPath.split('?')[0]
+  if (!path) return null
+
+  if (path === 'recognitions/learnings') {
+    return 'https://developers.google.com/static/profile/badges/recognitions/learnings/learnings.svg'
+  }
+
+  if (path === 'profile/created-profile') {
+    return 'https://developers.google.com/static/profile/badges/profile/created-profile/created_profile.svg'
+  }
+
+  if (path.startsWith('community/gdg/chapter/member/')) {
+    return 'https://developers.google.com/static/profile/badges/community/gdg/chapter/badge.svg'
+  }
+
+  return `https://developers.google.com/static/profile/badges/${path}/badge.svg`
+}
+
+function resolveBadgeImage(cert: Certification): string {
+  if (cert.source === 'google-developers') {
+    return googleDeveloperBadgeImageFromLink(cert.verificationLink) ?? cert.image
+  }
+  return cert.image
+}
+
 export function Certifications() {
   const [selected, setSelected] = useState<Certification | null>(null)
   const sortedCertifications = useMemo(
@@ -53,7 +82,7 @@ export function Certifications() {
               title={cert.name}
               aria-label={`Open large view for ${cert.name}`}
             >
-              <img src={cert.image} alt={cert.name} className="h-44 w-full object-cover" loading="lazy" />
+              <img src={resolveBadgeImage(cert)} alt={cert.name} className="h-44 w-full object-cover" loading="lazy" />
               <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/45" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-4 px-3 pb-3 text-left text-xs font-semibold text-white opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
                 {cert.name}
@@ -109,7 +138,11 @@ export function Certifications() {
                 Close
               </button>
             </div>
-            <img src={selected.image} alt={selected.name} className="max-h-[78vh] w-full object-contain p-4" />
+            <img
+              src={resolveBadgeImage(selected)}
+              alt={selected.name}
+              className="max-h-[78vh] w-full object-contain p-4"
+            />
           </div>
         </div>
       ) : null}
