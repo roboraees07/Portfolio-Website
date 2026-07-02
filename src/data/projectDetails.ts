@@ -387,12 +387,21 @@ model = get_peft_model(model, lora_config)`,
   },
   'lungs-seg': {
     introduction:
-      'Semantic segmentation of lung regions in medical images using FCN-8s deep learning for clinical decision support.',
+      'Semantic segmentation of lung regions in chest medical images using FCN-8s with a VGG-style encoder, developed as an early medical imaging project focused on automated region-of-interest extraction for downstream diagnosis support.',
+    problemStatement:
+      'Manual lung contouring is repetitive and variable between annotators. A lightweight semantic segmentation pipeline is needed to quickly isolate lung fields in low-contrast scans.',
+    objectives: [
+      'Build a reproducible FCN-8s baseline for binary lung-mask prediction',
+      'Evaluate mask quality on limited labeled data with overlay inspection',
+      'Create a transferable workflow for later medical CV projects',
+    ],
     methodology: [
       '60-image labeled dataset (256×256)',
       'FCN-8s + VGG feature extractor; SGD optimizer, 200 epochs',
+      'Image normalization, train/validation split, and mask overlay validation',
     ],
-    results: 'Accurate lung masks despite limited data; real-time inference potential.',
+    results:
+      'The model learned stable lung-boundary masks despite a small dataset, with consistent qualitative overlap on held-out scans. This project established a repeatable medical-segmentation training pipeline and practical preprocessing strategy for constrained-data scenarios.',
     gallery: [
       { title: 'Lung Segmentation', src: ghMedia(p1, 'cover.png') },
       { title: 'Architecture Diagram', src: ghMedia(p1, 'diagram.png') },
@@ -419,11 +428,12 @@ model = get_peft_model(model, lora_config)`,
     ],
     methodology: [
       'Dataset preprocessing and train/validation splits',
-      'CNN / FCN-style segmentation training in Python',
+      'CNN / FCN-style segmentation training in Python with multi-class masks',
       'Qualitative mask overlay evaluation on test frames',
+      'Failure-case analysis for shadows, bright glare, and class confusion',
     ],
     results:
-      'Demonstrated reliable road vs background separation on benchmark scenes; foundation for later YOLO and production ANPR work at Stixor.',
+      'Demonstrated reliable drivable-area separation and lane-region understanding on benchmark road scenes. The experimentation on class balance, overlays, and error analysis directly informed later production detection systems.',
     gallery: [
       { title: 'Road Segmentation', src: ghMedia(p8, 'cover.png') },
       { title: 'Road Dataset', src: ghMedia(p8, 'Road Dataset.png') },
@@ -444,12 +454,13 @@ model = get_peft_model(model, lora_config)`,
       'Report precision/recall on held-out malware families',
     ],
     methodology: [
-      'Dataset cleaning and label balancing',
-      'Scikit-learn pipelines with cross-validation',
-      'Error analysis on false positives/negatives',
+      'Drebin-style dataset with 15,036 samples (5,560 malware, 9,476 benign)',
+      '215 engineered features (permissions, API calls, intents, behavior signals)',
+      'Model comparison: Decision Tree, SVM (linear/poly/RBF), Logistic Regression, KNN, and Sequential NN',
+      'Scikit-learn / TensorFlow training with correlation heatmap and confusion checks',
     ],
     results:
-      'Demonstrated strong separation between benign and malware classes on benchmark features; codebase published for peer review.',
+      'Multiple models reached high detection performance: Decision Tree ~98%, SVM linear ~98%, SVM RBF ~98%, Logistic Regression ~98%, and neural baseline around 97–98% depending on epoch count and split.',
     gallery: [
       { title: 'Malware Classification', src: ghMedia(p4, 'cover.png') },
       { title: 'Feature Heatmap', src: ghMedia(p4, 'Heatmap.png') },
@@ -474,9 +485,9 @@ model = get_peft_model(model, lora_config)`,
       'Publish wiring diagrams and firmware for student replication',
     ],
     methodology: [
-      'IR sensor array for line detection; ultrasonic for obstacles',
-      'Arduino C++ state machine for mode switching',
-      'Iterative calibration on competition-style tracks',
+      'Dual IR line sensors on A0/A1 and L298-style motor-driver control pins',
+      'Arduino C++ control loop with threshold-based steering (IR threshold ~200)',
+      'PWM speed control (default ~250) and iterative calibration on demo tracks',
     ],
     results: 'Stable multi-mode operation; open-source repo used in GDSC and university robotics labs.',
     gallery: [
@@ -490,6 +501,10 @@ model = get_peft_model(model, lora_config)`,
       {
         label: 'GitHub',
         url: 'https://github.com/roboraees07/Arduino-based-line-following-Car',
+      },
+      {
+        label: 'Control Sketch',
+        url: 'https://raw.githubusercontent.com/roboraees07/Arduino-based-line-following-Car/main/Line_Following_Robot_by_roboraees07.ino',
       },
     ],
     codeSnippets: [
@@ -531,6 +546,17 @@ model = get_peft_model(model, lora_config)`,
       { title: 'Simulation Model', src: ghMedia(p9, 'semulation-model.png') },
       { title: 'Simulation Results', src: ghMedia(p9, 'Simulation Results.png') },
     ],
+    codeSnippets: [
+      {
+        title: 'Servo sequence control (concept)',
+        language: 'cpp',
+        code: `base.write(90); shoulder.write(60); elbow.write(120); gripper.write(20);
+delay(600);
+gripper.write(80);   // grasp
+delay(400);
+base.write(130); shoulder.write(80); elbow.write(95); // place position`,
+      },
+    ],
   },
   'tetrax': {
     introduction:
@@ -545,7 +571,7 @@ model = get_peft_model(model, lora_config)`,
     methodology: [
       'Circuit simulation in Proteus before PCB/trainer assembly',
       'Component selection for clear oscilloscope demos',
-      'Exhibition-ready documentation and live measurements',
+      'Exhibition-ready documentation and live transient-response measurements',
     ],
     results: '2nd Prize — TechFest Fall 2021; adopted as teaching aid for sophomore electronics labs.',
     gallery: [
@@ -563,23 +589,39 @@ model = get_peft_model(model, lora_config)`,
     problemStatement:
       'Residential energy waste and lack of remote visibility into home appliance states.',
     objectives: [
-      'Sense temperature, humidity, and motion across rooms',
-      'Automate lighting and fan relays from sensor rules',
-      'Provide simple mobile/web dashboard for homeowners',
+      'Control household loads remotely via Blynk mobile app',
+      'Support manual wall-switch override for reliability',
+      'Provide status feedback and scalable multi-relay architecture',
     ],
     methodology: [
-      'Arduino/ESP-class microcontrollers with MQTT or HTTP telemetry',
-      'Relay driver circuits for loads within safe current limits',
-      'Dashboard prototyping for status and manual override',
+      'NodeMCU ESP8266 + 4-channel relay architecture (D1/D2/D5/D6 relay pins)',
+      'Blynk virtual pins (V1–V4), Wi-Fi status LED, and auth-token cloud control',
+      'Dual-mode control logic: online (app + switches) and offline (switch-only fallback)',
+      'Arduino IDE firmware deployment with debounced local toggle behavior',
     ],
     results:
-      'Successful STEM expo demo; open-sourced on GitHub for reproducible student IoT capstones.',
+      'Delivered a stable low-cost automation prototype with remote and manual control parity, real-time device-state synchronization, and repeatable student deployment using commodity NodeMCU + relay hardware.',
     gallery: [
       { title: 'Smart Home System', src: ghMedia(p6, 'cover.png') },
       { title: 'IoT Project Banner', src: ghMedia(p6, 'banner.jfif') },
     ],
     references: [
       { label: 'GitHub', url: 'https://github.com/roboraees07/IoT-Based-Home-Automation' },
+      {
+        label: 'NodeMCU Firmware',
+        url: 'https://raw.githubusercontent.com/roboraees07/IoT-Based-Home-Automation/main/HomeAutomation.ino',
+      },
+    ],
+    codeSnippets: [
+      {
+        title: 'Online/offline fallback control (concept)',
+        language: 'cpp',
+        code: `if (wifiFlag == 0) {
+  with_internet();   // Blynk + manual switches
+} else {
+  without_internet(); // manual switches only
+}`,
+      },
     ],
   },
   'jazzcash-fraud': {
