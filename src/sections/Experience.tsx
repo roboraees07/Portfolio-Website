@@ -1,5 +1,6 @@
 import { SectionHeading } from '../components/SectionHeading'
 import { ExperienceAccordion } from '../components/ExperienceAccordion'
+import { Certifications } from './Certifications'
 import {
   professionalExperiences,
   volunteerExperiences,
@@ -39,6 +40,8 @@ export function Experience() {
           ))}
         </div>
       </div>
+
+      <Certifications />
     </section>
   )
 }

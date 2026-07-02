@@ -1,0 +1,224 @@
+export type Certification = {
+  id: string
+  name: string
+  issuer: string
+  issueDate?: string
+  image: string
+  verificationLink: string
+  credentialCode?: string
+  source: 'credly' | 'google-skills' | 'google-developers'
+}
+
+const googleSkillsBadgeImage = 'https://images.credly.com/images/ba7d317c-0441-493d-9297-840162892581/image.png'
+const googleDevelopersBadgeImage =
+  'https://www.gstatic.com/images/branding/product/2x/google_cloud_96dp.png'
+
+export const certifications: Certification[] = [
+  {
+    id: 'credly-artificial-intelligence-essentials-v2',
+    name: 'Artificial Intelligence Essentials V2',
+    issuer: 'Coursera (Authorized by IBM)',
+    issueDate: '2025-03-04',
+    image:
+      'https://images.credly.com/images/3e199561-bc4a-4621-9361-340fc43d997e/Coursera_20Artificial_20Intelligence_20Essentials_20V2.png',
+    verificationLink: 'https://www.credly.com/org/coursera/badge/artificial-intelligence-essentials-v2',
+    credentialCode: '229b8bec-da69-40f6-b921-c8fa1bbb4242',
+    source: 'credly',
+  },
+  {
+    id: 'credly-classify-images-with-tensorflow-on-google-cloud',
+    name: 'Classify Images with TensorFlow on Google Cloud',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-20',
+    image: 'https://images.credly.com/images/ba7d317c-0441-493d-9297-840162892581/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/classify-images-with-tensorflow-on-google-cloud',
+    credentialCode: '71ced382-b1d5-4eda-9b02-afca5c1e99a8',
+    source: 'credly',
+  },
+  {
+    id: 'credly-analyze-sentiment-with-natural-language-api',
+    name: 'Analyze Sentiment with Natural Language API Skill Badge',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-18',
+    image: 'https://images.credly.com/images/bd687b0c-3959-4e06-b511-6623e32b8fdb/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/analyze-sentiment-with-natural-language-api-skill-b',
+    credentialCode: '906bbe1e-90e3-45b6-b2e5-644515fc6e02',
+    source: 'credly',
+  },
+  {
+    id: 'credly-analyze-speech-and-language-with-google-apis',
+    name: 'Analyze Speech and Language with Google APIs Skill Badge',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-18',
+    image: 'https://images.credly.com/images/b82729b9-8f1f-4362-8b71-fb08f2cea6c2/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/analyze-speech-and-language-with-google-apis-skill-',
+    credentialCode: '9c128ff6-133c-471d-8093-aa96f9606af7',
+    source: 'credly',
+  },
+  {
+    id: 'credly-build-lookml-objects-in-looker',
+    name: 'Build LookML Objects in Looker Skill Badge',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-18',
+    image: 'https://images.credly.com/images/2607a61b-7f94-43d7-bb97-3e811312c53e/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/build-lookml-objects-in-looker-skill-badge',
+    credentialCode: 'b2f02c78-3985-4706-9bd3-ae2c59bd74c3',
+    source: 'credly',
+  },
+  {
+    id: 'credly-monitor-and-manage-google-cloud-resources',
+    name: 'Monitor and Manage Google Cloud Resources Skill Badge',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-18',
+    image: 'https://images.credly.com/images/c07b49a7-c295-4e2a-9557-09c22032e3ae/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/monitor-and-manage-google-cloud-resources-skill-bad',
+    credentialCode: '430d9aa3-a977-437b-83d9-2a35514683a3',
+    source: 'credly',
+  },
+  {
+    id: 'credly-predictive-data-analysis-in-bigquery',
+    name: 'Perform Predictive Data Analysis in BigQuery Skill Badge',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-18',
+    image: 'https://images.credly.com/images/d41246ef-1f8e-4b3a-b93d-034e7c66e309/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/perform-predictive-data-analysis-in-bigquery-skill-',
+    credentialCode: '1933e40b-b030-4d59-a3c6-76dad2ad5901',
+    source: 'credly',
+  },
+  {
+    id: 'credly-basics-of-google-cloud-compute',
+    name: 'The Basics of Google Cloud Compute Skill Badge',
+    issuer: 'Google Cloud',
+    issueDate: '2025-02-18',
+    image: 'https://images.credly.com/images/7623fefd-ebbd-4d8f-a053-f41dca852d9e/image.png',
+    verificationLink:
+      'https://www.credly.com/org/google-cloud/badge/the-basics-of-google-cloud-compute-skill-badge',
+    credentialCode: '22ccc6ae-ffab-485e-b03f-34c86aec2a1d',
+    source: 'credly',
+  },
+  {
+    id: 'credly-google-data-analytics-professional-certificate',
+    name: 'Google Data Analytics Professional Certificate',
+    issuer: 'Coursera',
+    issueDate: '2025-01-30',
+    image: 'https://images.credly.com/images/d41de2b7-cbc2-47ec-bcf1-ebecbe83872f/GCC_badge_DA_1000x1000.png',
+    verificationLink: 'https://www.credly.com/org/coursera/badge/google-data-analytics-professional-certificate.2',
+    credentialCode: '1757163e-f8e3-483b-9e4a-870d23faeda5',
+    source: 'credly',
+  },
+  {
+    id: 'credly-google-ai-essentials-v1',
+    name: 'Google AI Essentials V1',
+    issuer: 'Coursera',
+    issueDate: '2025-01-04',
+    image: 'https://images.credly.com/images/ea3eec65-ddad-4242-9c59-1defac0fa2d9/image.png',
+    verificationLink: 'https://www.credly.com/org/coursera/badge/google-ai-essentials-v1',
+    credentialCode: 'ded3dbcc-7cb2-4c06-85d6-7817b74819af',
+    source: 'credly',
+  },
+  {
+    id: 'credly-ccna-introduction-to-networks',
+    name: 'CCNA: Introduction to Networks',
+    issuer: 'Cisco',
+    issueDate: '2020-12-13',
+    image: 'https://images.credly.com/images/70d71df5-f3dc-4380-9b9d-f22513a70417/CCNAITN__1_.png',
+    verificationLink: 'https://www.credly.com/org/cisco/badge/ccna-introduction-to-networks',
+    credentialCode: 'aadc101f-28a1-4d22-96ea-4d1a983b2476',
+    source: 'credly',
+  },
+  {
+    id: 'skills-gemini-security-engineers',
+    name: 'Gemini for Security Engineers',
+    issuer: 'Google Skills Boost',
+    issueDate: '2025-02-20',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-how-google-does-machine-learning',
+    name: 'How Google Does Machine Learning',
+    issuer: 'Google Skills Boost',
+    issueDate: '2025-02-18',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-responsible-ai-privacy-safety',
+    name: 'Responsible AI for Developers: Privacy & Safety',
+    issuer: 'Google Skills Boost',
+    issueDate: '2025-02-18',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-gemini-data-scientists-analysts',
+    name: 'Gemini for Data Scientists and Analysts',
+    issuer: 'Google Skills Boost',
+    issueDate: '2025-02-18',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-gemini-application-developers',
+    name: 'Gemini for Application Developers',
+    issuer: 'Google Skills Boost',
+    issueDate: '2025-02-18',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-gemini-cloud-architects',
+    name: 'Gemini for Cloud Architects',
+    issuer: 'Google Skills Boost',
+    issueDate: '2025-02-18',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-intro-large-language-models',
+    name: 'Introduction to Large Language Models',
+    issuer: 'Google Skills Boost',
+    issueDate: '2024-01-19',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-intro-generative-ai',
+    name: 'Introduction to Generative AI',
+    issuer: 'Google Skills Boost',
+    issueDate: '2024-01-19',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'skills-intro-ai-ml-google-cloud',
+    name: 'Introduction to AI and Machine Learning on Google Cloud',
+    issuer: 'Google Skills Boost',
+    issueDate: '2024-01-19',
+    image: googleSkillsBadgeImage,
+    verificationLink: 'https://www.skills.google/public_profiles/d6c27250-aebf-49de-ab76-31870aa1c4c5',
+    source: 'google-skills',
+  },
+  {
+    id: 'gdev-google-developer-profile',
+    name: 'Google Developer Program Profile Badges',
+    issuer: 'Google for Developers',
+    image: googleDevelopersBadgeImage,
+    verificationLink: 'https://me.developers.google.com/u/115769942136393563919',
+    source: 'google-developers',
+  },
+]
