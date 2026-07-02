@@ -67,7 +67,7 @@ export function Certifications() {
         subtitle="Hover to see certificate names, click image to enlarge, and open each dropdown for credential code and verification link."
       />
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
         {sortedCertifications.map((cert) => (
           <article
             key={cert.id}
